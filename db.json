@@ -1,20 +1,25 @@
 {
-    "cards": [
-        {
-            "id": 1,
-            "name": "Umbris, Fear Manifest",
-            "image": "https://cards.scryfall.io/large/front/7/a/7aead6a8-bada-42cf-b7cc-0b730f564582.jpg?1644888719",
-            "type": "creature",
-            "colors": ["blue", "black"],
-            "main": true
-        },
-        {
-            "id": 2,
-            "name": "Rite of Replication",
-            "image": "https://cards.scryfall.io/large/front/4/5/4530fe45-8a3d-48e9-a7a5-abf8fb1485e3.jpg?1562611774",
-            "type": "sorcery",
-            "colors": ["blue"],
-            "main": false
-        }
-    ]
+  "cards": [
+    {
+      "id": 1,
+      "name": "Umbris, Fear Manifest",
+      "image": "https://cards.scryfall.io/large/front/7/a/7aead6a8-bada-42cf-b7cc-0b730f564582.jpg?1644888719",
+      "type": "creature",
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "main": false
+    },
+    {
+      "id": 2,
+      "name": "Rite of Replication",
+      "image": "https://cards.scryfall.io/large/front/4/5/4530fe45-8a3d-48e9-a7a5-abf8fb1485e3.jpg?1562611774",
+      "type": "sorcery",
+      "colors": [
+        "blue"
+      ],
+      "main": false
+    }
+  ]
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import Container from "./Container"
 
-function Deck({ cards }) {
+function Deck({ cards, onAddOrRemove }) {
     return (
         <div>
-            <Container cards={cards} />
+            <Container cards={cards} onAddOrRemove={onAddOrRemove} />
         </div>
     )
 }

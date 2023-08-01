@@ -14,6 +14,29 @@ function App() {
     .then(data => setCards(data))
   }, [])
 
+  function addOrRemove(card) {
+    fetch(`http://localhost:3000/cards/${card.id}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...card,
+        main: !card.main
+      })
+    })
+    .then(r => r.json())
+    .then(data => {
+      setCards(cards.map(card => {
+        if (card.id === data.id) {
+          return data
+        } else {
+          return card
+        }
+      }))
+    })
+  }
+
   const deck = cards.filter(card => card.main === true)
 
   return (
@@ -21,13 +44,13 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Home cards={cards} />
+          <Home cards={cards} onAddOrRemove={addOrRemove} />
         </Route>
         <Route exact path="/add">
           <Form />
         </Route>
         <Route exact path="/deck">
-          <Deck cards={deck} />
+          <Deck cards={deck} onAddOrRemove={addOrRemove} />
         </Route>
       </Switch>
     </div>

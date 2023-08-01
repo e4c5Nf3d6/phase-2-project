@@ -1,22 +1,35 @@
 import React from "react";
 
-function Card({ image, name }) {
+function Card({ card, onAddOrRemove }) {
+
+    function handleClick() {
+        console.log(card.main)
+    }
+
     return (
         <div className="card">
             <div className="content">
                 <div className="image">
-                    <img className="ui fluid image" src={image} alt={name} />
+                    <img className="ui fluid image" src={card.image} alt={card.name} />
                 </div>
                 <br />
                 <div className="header">
-                    {name}
+                    {card.name}
                 </div>
             </div>
             <div className="extra content">
-                <div className="ui bottom attached button">
-                    <i className="add icon"></i>
-                    Add to Deck
-                </div>
+                {(card.main === false)
+                    ?               
+                    <div className="ui bottom attached button" onClick={() => onAddOrRemove(card)} >
+                        <i className="add icon"></i>
+                        Add to Deck
+                    </div>
+                    :
+                    <div className="ui bottom attached button" onClick={() => onAddOrRemove(card)} >
+                        <i className="minus icon"></i>
+                        Remove from Deck
+                    </div>
+                }
             </div>
         </div>
     )
