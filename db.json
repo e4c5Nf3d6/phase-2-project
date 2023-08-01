@@ -20,6 +20,42 @@
         "blue"
       ],
       "main": false
+    },
+    {
+      "id": 3,
+      "name": "Helm of the Host",
+      "image": "https://cards.scryfall.io/large/front/1/d/1d65d20c-09e5-4139-838b-7e0e48eb2b2b.jpg?1666094567",
+      "type": "artifact",
+      "colors": [],
+      "main": false
+    },
+    {
+      "id": 4,
+      "name": "Cryptic Command",
+      "image": "https://cards.scryfall.io/large/front/3/0/30f6fca9-003b-4f6b-9d6e-1e88adda4155.jpg?1562847413",
+      "type": "instant",
+      "colors": [
+        "blue"
+      ],
+      "main": false
+    },
+    {
+      "id": 5,
+      "name": "Web of Inertia",
+      "image": "https://cards.scryfall.io/large/front/0/e/0e6d2721-1dfc-4f4f-a914-9352ca6981c0.jpg?1562628645",
+      "type": "enchantment",
+      "colors": [
+        "blue"
+      ],
+      "main": false
+    },
+    {
+      "id": 6,
+      "name": "Scavenger Grounds",
+      "image": "https://cards.scryfall.io/large/front/7/8/78748ac8-4726-4156-a97e-023f80fef610.jpg?1625980919",
+      "type": "land",
+      "colors": [],
+      "main": false
     }
   ]
 }
