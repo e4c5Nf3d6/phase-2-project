@@ -1,3 +1,11 @@
 body {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #ADE5C2;
+  padding: 20px;
+  display: block;
 }
