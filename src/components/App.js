@@ -20,10 +20,7 @@ function App() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        ...card,
-        main: !card.main
-      })
+      body: JSON.stringify({ main: !card.main })
     })
     .then(r => r.json())
     .then(data => {

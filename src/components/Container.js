@@ -2,8 +2,9 @@ import React from "react";
 import Card from "./Card";
 
 function Container({ cards, onAddOrRemove }) {
+    const sortedCards = cards.sort((a, b) => (a.name > b.name) ? 1 : -1)
 
-    const cardList = cards.map(card => {
+    const cardList = sortedCards.map(card => {
         return <Card key={card.id} card={card} onAddOrRemove={onAddOrRemove} />
     })
 
