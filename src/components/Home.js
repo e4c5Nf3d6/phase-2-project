@@ -2,11 +2,11 @@ import React from "react";
 import Filter from "./Filter"
 import Container from "./Container"
 
-function Home() {
+function Home({ cards }) {
     return (
         <div>
             <Filter />
-            <Container />
+            <Container cards={cards} />
         </div>
     )
 }

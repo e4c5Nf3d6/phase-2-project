@@ -1,15 +1,15 @@
 import React from "react";
 
-function Card() {
+function Card({ image, name }) {
     return (
         <div className="card">
             <div className="content">
                 <div className="image">
-                    <img className="ui fluid image" src="https://cards.scryfall.io/large/front/7/a/7aead6a8-bada-42cf-b7cc-0b730f564582.jpg?1644888719" alt="Umbris, Fear Manifest" />
+                    <img className="ui fluid image" src={image} alt={name} />
                 </div>
                 <br />
                 <div className="header">
-                    Umbris, Fear Manifest
+                    {name}
                 </div>
             </div>
             <div className="extra content">

@@ -1,10 +1,10 @@
 import React from "react";
 import Container from "./Container"
 
-function Deck() {
+function Deck({ cards }) {
     return (
         <div>
-            <Container />
+            <Container cards={cards} />
         </div>
     )
 }

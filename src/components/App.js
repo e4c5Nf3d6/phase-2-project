@@ -6,7 +6,6 @@ import Form from "./Form"
 import Deck from "./Deck";
 
 function App() {
-
   const [cards, setCards] = useState([])
 
   useEffect(() => {
@@ -15,18 +14,20 @@ function App() {
     .then(data => setCards(data))
   }, [])
 
+  const deck = cards.filter(card => card.main === true)
+
   return (
     <div>
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home cards={cards} />
         </Route>
         <Route exact path="/add">
           <Form />
         </Route>
         <Route exact path="/deck">
-          <Deck />
+          <Deck cards={deck} />
         </Route>
       </Switch>
     </div>

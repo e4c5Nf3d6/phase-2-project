@@ -1,10 +1,15 @@
 import React from "react";
 import Card from "./Card";
 
-function Container() {
+function Container({ cards }) {
+
+    const cardList = cards.map(card => {
+        return <Card key={card.id} image={card.image} name={card.name} />
+    })
+
     return (
         <div className="ui cards">
-            <Card />
+            {cardList}
         </div>
     )
 }
