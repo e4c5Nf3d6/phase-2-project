@@ -1,9 +1,10 @@
 import React from "react";
+import Card from "./Card";
 
 function Container() {
     return (
-        <div>
-            Container
+        <div class="ui cards">
+            <Card />
         </div>
     )
 }
