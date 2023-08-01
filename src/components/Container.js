@@ -3,7 +3,7 @@ import Card from "./Card";
 
 function Container() {
     return (
-        <div class="ui cards">
+        <div className="ui cards">
             <Card />
         </div>
     )
