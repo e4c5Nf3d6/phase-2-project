@@ -1,9 +1,15 @@
-import React from "react";
+import React from "react"
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 function NavBar() {
     return (
         <div>
-            NavBar
+            <NavLink to="/" exact >
+                Home
+            </NavLink>
+            <NavLink to="/deck" exact >
+                Deck
+            </NavLink>
         </div>
     )
 }
