@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const linkStyles = {
     display: "inline-block",
-    width: "50px",
+    width: "100px",
     padding: "12px",
     margin: "0 6px 6px",
     background: "green",
@@ -23,6 +23,16 @@ function NavBar() {
                 }}
             >
                 Home
+            </NavLink>
+            <NavLink 
+                to="/add" 
+                exact
+                style={linkStyles}
+                activeStyle={{
+                  background: "darkgreen",
+                }}
+            >
+                Add a Card
             </NavLink>
             <NavLink 
                 to="/deck" 

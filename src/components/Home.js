@@ -1,9 +1,12 @@
 import React from "react";
+import Filter from "./Filter"
+import Container from "./Container"
 
 function Home() {
     return (
         <div>
-            Home
+            <Filter />
+            <Container />
         </div>
     )
 }

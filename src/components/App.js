@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom"
 import NavBar from "./NavBar";
 import Home from "./Home";
+import Form from "./Form"
 import Deck from "./Deck";
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/add">
+          <Form />
         </Route>
         <Route exact path="/deck">
           <Deck />
