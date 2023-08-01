@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SelectColors from "./SelectColors";
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ function Form() {
         colors: [],
         main: false
     })
+    const [selectedColors, setSelectedColors] = useState([])
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -19,6 +21,7 @@ function Form() {
             colors: [],
             main: false
         })
+        setSelectedColors([])
     }
 
     function handleChange(e) {
@@ -29,6 +32,14 @@ function Form() {
             ...formData,
             [key]: value
         })
+    }
+
+    function handleColorChange(colors) {
+        setFormData({
+            ...formData,
+            colors: colors.map(option => option.value)
+        })
+        setSelectedColors(colors)
     }
 
     return (
@@ -52,6 +63,24 @@ function Form() {
                     onChange={e => handleChange(e)}
                     required
                 />
+                <label htmlFor="type">Type</label>
+                <select 
+                    id="type"
+                    value={formData.type} 
+                    onChange={e => handleChange(e)}
+                    required
+                >
+                    <option value="" disabled>Select Card Type</option>
+                    <option value="creature">Creature</option>
+                    <option value="sorcery">Sorcery</option>
+                    <option value="instant">Instant</option>
+                    <option value="artifact">Artifact</option>
+                    <option value="enchantment">Enchantment</option>
+                    <option value="land">Land</option>
+                </select>
+                <label htmlFor="colors">Colors</label>
+                <SelectColors id="colors" onHandleColorChange={handleColorChange} selectedColors={selectedColors} />
+
                 <input type="submit" value="Submit Card" />
             </form>
         </div>
