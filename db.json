@@ -4,138 +4,185 @@
       "id": 1,
       "name": "Umbris, Fear Manifest",
       "image": "https://cards.scryfall.io/large/front/7/a/7aead6a8-bada-42cf-b7cc-0b730f564582.jpg?1644888719",
+      "converted": null,
       "type": "creature",
       "colors": [
         "blue",
         "black"
       ],
-      "main": true
+      "main": false
     },
     {
       "id": 2,
       "name": "Rite of Replication",
       "image": "https://cards.scryfall.io/large/front/4/5/4530fe45-8a3d-48e9-a7a5-abf8fb1485e3.jpg?1562611774",
+      "converted": null,
       "type": "sorcery",
       "colors": [
         "blue"
       ],
-      "main": true
+      "main": false
     },
     {
       "id": 3,
       "name": "Helm of the Host",
       "image": "https://cards.scryfall.io/large/front/1/d/1d65d20c-09e5-4139-838b-7e0e48eb2b2b.jpg?1666094567",
+      "converted": null,
       "type": "artifact",
       "colors": [],
-      "main": true
+      "main": false
     },
     {
       "id": 4,
       "name": "Cryptic Command",
       "image": "https://cards.scryfall.io/large/front/3/0/30f6fca9-003b-4f6b-9d6e-1e88adda4155.jpg?1562847413",
+      "converted": null,
       "type": "instant",
       "colors": [
         "blue"
       ],
-      "main": true
+      "main": false
     },
     {
       "id": 5,
       "name": "Web of Inertia",
       "image": "https://cards.scryfall.io/large/front/0/e/0e6d2721-1dfc-4f4f-a914-9352ca6981c0.jpg?1562628645",
+      "converted": null,
       "type": "enchantment",
       "colors": [
         "blue"
       ],
-      "main": true
+      "main": false
     },
     {
       "id": 6,
       "name": "Scavenger Grounds",
       "image": "https://cards.scryfall.io/large/front/7/8/78748ac8-4726-4156-a97e-023f80fef610.jpg?1625980919",
+      "converted": null,
       "type": "land",
       "colors": [],
-      "main": true
+      "main": false
     },
     {
       "name": "Toxrill, the Corrosive",
       "image": "https://cards.scryfall.io/large/front/8/4/84e64f38-b1f3-47cd-8cfb-a4861369aca3.jpg?1643590379",
+      "converted": null,
       "type": "creature",
       "colors": [
         "blue",
         "black"
       ],
-      "main": true,
+      "main": false,
       "id": 7
     },
     {
       "name": "Panharmonicon",
       "image": "https://cards.scryfall.io/large/front/1/5/15856326-d943-476a-9d31-898b9f990bb6.jpg?1576383323",
+      "converted": null,
       "type": "artifact",
       "colors": [],
-      "main": true,
+      "main": false,
       "id": 8
     },
     {
       "name": "Counterspell",
       "image": "https://cards.scryfall.io/large/front/1/9/1920dae4-fb92-4f19-ae4b-eb3276b8dac7.jpg?1628801663",
+      "converted": null,
       "type": "instant",
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 9
     },
     {
       "name": "Irenicus's Vile Duplication",
       "image": "https://cards.scryfall.io/large/front/4/0/40a791df-2483-406d-90b0-a8d402d615d6.jpg?1674135605",
+      "converted": null,
       "type": "sorcery",
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 10
     },
     {
       "name": "Island",
       "image": "https://cards.scryfall.io/large/front/b/f/bf35ed4f-fa34-4fd6-b7d8-3c4aeda1e9ea.jpg?1674422266",
+      "converted": null,
       "type": "land",
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 11
     },
     {
       "name": "Zellix, Sanity Flayer",
       "image": "https://cards.scryfall.io/large/front/a/5/a5d57db6-0aa5-4e28-b156-e97b74af2cee.jpg?1674140721",
+      "converted": null,
       "type": "creature",
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 12
     },
     {
       "name": "Dimir Signet",
       "image": "https://cards.scryfall.io/large/front/5/0/501d0d13-b6a4-415c-916e-fdb0809a67d8.jpg?1593814894",
+      "converted": null,
       "type": "artifact",
       "colors": [
         "blue",
         "black"
       ],
-      "main": true,
+      "main": false,
       "id": 13
     },
     {
       "name": "Chasm Skulker",
       "image": "https://cards.scryfall.io/large/front/9/7/97df5b12-bd8e-44dd-8b6c-1511eaa080c3.jpg?1562411351",
+      "converted": null,
+      "type": "creature",
+      "colors": [
+        "blue"
+      ],
+      "main": false,
+      "id": 14
+    },
+    {
+      "name": "Leyline of the Void",
+      "image": "https://cards.scryfall.io/large/front/0/4/04d5d429-e0c6-42cc-a477-da7dabb1c295.jpg?1592516724",
+      "converted": null,
+      "type": "enchantment",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 15
+    },
+    {
+      "name": "Mandate of Abaddon",
+      "image": "https://cards.scryfall.io/large/front/b/6/b63fa88b-a177-49b7-a583-a0a041313f77.jpg?1673308696",
+      "converted": null,
+      "type": "sorcery",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 16
+    },
+    {
+      "name": "Thing in the Ice // Awoken Horror",
+      "image": "https://cards.scryfall.io/large/front/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282",
+      "converted": "https://cards.scryfall.io/large/back/3/5/359d1b13-6156-43b0-a9a7-6bfff36c1a91.jpg?1576384282",
       "type": "creature",
       "colors": [
         "blue"
       ],
       "main": true,
-      "id": 14
+      "id": 17
     }
   ]
 }

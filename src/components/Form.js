@@ -4,6 +4,7 @@ import SelectOption from "./SelectOption";
 function Form({ onSubmitCard, formData, onSetFormData }) {
     const [selectedColors, setSelectedColors] = useState([])
     const [selectedType, setSelectedType] = useState("")
+    const [converts, setConverts] = useState(false)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -11,12 +12,14 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
         onSetFormData({
             name: "",
             image: "",
+            converted: null,
             type: "",
             colors: [],
             main: false
         })
         setSelectedColors([])
         setSelectedType("")
+        setConverts(false)
     }
 
     function handleChange(e) {
@@ -66,6 +69,28 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     onChange={e => handleChange(e)}
                     required
                 />
+                <div className="checkbox">
+                    <input 
+                        type="checkbox" 
+                        id="converts" 
+                        checked={converts} 
+                        onChange={e => setConverts(e.target.checked)} 
+                    />
+                    <label htmlFor="add">This Card Converts</label>                    
+                </div>
+                {converts ?
+                    <div>
+                        <label htmlFor="converted">Converted Image</label>
+                        <input 
+                            type="text"
+                            id="converted"
+                            placeholder="Type converted image url here"
+                            value={formData.converted}
+                            onChange={e => handleChange(e)}
+                        />
+                    </div>
+                    : null
+                }   
                 <label htmlFor="type">Type</label>
                 <SelectOption 
                     id="type" 

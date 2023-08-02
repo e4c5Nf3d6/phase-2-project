@@ -6,6 +6,7 @@ function AddCard({ onSubmitCard }) {
     const [formData, setFormData] = useState({
         name: "",
         image: "",
+        converted: null,
         type: "",
         colors: [],
         main: false

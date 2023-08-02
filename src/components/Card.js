@@ -5,9 +5,16 @@ function Card({ card, onAddOrRemove, preview=false }) {
     return (
         <div className="card">
             <div className="content">
-                <div className="image">
-                    <img className="ui fluid image" src={card.image ? card.image : "https://www.mtgcardmaker.com/mcmaker/createcard.jpg"} alt={card.name} />
-                </div>
+                {card.converted? 
+                    <div class="ui slide masked reveal image">
+                        <img src={card.image ? card.image : "https://www.mtgcardmaker.com/mcmaker/createcard.jpg"} class="visible content" alt={card.name} />
+                        <img src={card.converted} class="hidden content" alt={card.name} />
+                    </div>
+                    :
+                    <div className="image">
+                        <img className="ui fluid image" src={card.image ? card.image : "https://www.mtgcardmaker.com/mcmaker/createcard.jpg"} alt={card.name} />
+                    </div>
+                }
             </div>
             <div className="extra content">
                 {(card.main === false)
