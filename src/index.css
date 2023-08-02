@@ -74,3 +74,8 @@ label {
   text-align: left;
   padding: 20px;
 }
+
+.checkbox input[type=checkbox], label {
+  display: inline-block;
+  padding: 5px;
+}

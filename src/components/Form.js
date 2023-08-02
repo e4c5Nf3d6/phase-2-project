@@ -21,7 +21,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
 
     function handleChange(e) {
         const key = e.target.id
-        const value = e.target.value
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
 
         onSetFormData({
             ...formData,
@@ -97,6 +97,15 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                         { value: 'white', label: 'White' }
                     ]}
                 />
+                <div className="checkbox">
+                    <input 
+                        type="checkbox" 
+                        id="main" 
+                        checked={formData.main} 
+                        onChange={handleChange} 
+                    />
+                    <label htmlFor="add">Add to Deck</label>                    
+                </div>
                 <input type="submit" value="Submit Card" />
             </form>
         </div>
