@@ -21,6 +21,10 @@ label {
   margin-bottom: 5px
 }
 
+form {
+  margin: 20px
+}
+
 input[type=text] {
   display: block;
   margin-bottom: 20px;

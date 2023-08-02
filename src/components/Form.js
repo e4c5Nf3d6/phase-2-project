@@ -47,7 +47,7 @@ function Form({ onSubmitCard }) {
     function handleTypeChange(type) {
         setFormData({
             ...formData,
-            type: type.value
+            type: type ? type.value : ""
         })
         setSelectedType(type)
     }

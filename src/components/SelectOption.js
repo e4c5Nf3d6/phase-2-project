@@ -5,6 +5,7 @@ function SelectOption({ multi, name, options, selected, onHandleChange }) {
     return(
         <Select 
             isMulti={multi}
+            isClearable
             name={name}
             value={selected}
             options={options}

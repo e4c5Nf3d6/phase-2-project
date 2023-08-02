@@ -16,7 +16,7 @@ function Filter({ filterData, onSetFilterData, selectedColors, onSetSelectedColo
     function handleTypeChange(type) {
         onSetFilterData({
             ...filterData,
-            type: type.value
+            type: type ? type.value : ""
         })
         onSetSelectedType(type)
     }
