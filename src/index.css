@@ -93,7 +93,15 @@ label {
 }
 
 #deckheader {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 20px;
+  text-align: left;
+}
+
+#decksubheader {
+  margin-left: 40px;
+  margin-top: 0px;
+}
+
+.icon {
+  width: 30px;
 }

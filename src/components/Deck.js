@@ -2,12 +2,24 @@ import React from "react";
 import Container from "./Container"
 
 function Deck({ cards, onAddOrRemove }) {
+
+    const deckColors = []
+    for (let i = 0; i < cards.length; i++) {
+        for (let j = 0; j < cards[i].colors.length; j++) {
+            if (!deckColors.includes(cards[i].colors[j])) {
+                deckColors.push(cards[i].colors[j])
+            }
+        }
+    }
+
     return (
         <div id="deck">
             <div id="deckheader">
-                <span>
-                    <h1 className="decktitle">My Deck</h1></span>
-                <span><h1>Total Cards — {cards.length}</h1></span>                
+                <h1 className="decktitle">My Deck</h1>
+                <div>
+                    <h3 id="decksubheader">Total Cards: {cards.length}</h3> 
+                    <h3 id="decksubheader">Deck Colors: {deckColors.join(", ")}</h3>
+                </div>        
             </div>
 
             <div className="sectionheader">
