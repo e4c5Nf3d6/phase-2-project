@@ -15,7 +15,6 @@ function Home({ cards, onAddOrRemove }) {
     const filteredByType = filteredBySearch.filter(card => card.type.includes(selectedType ? selectedType.value : ""))
     const filteredByColor = filteredByType.filter(card => {
         let matches = true
-        console.log(selectedColors)
         for (let i = 0; i < selectedColors.length; i++) {
             if (!card.colors.includes(selectedColors[i].value)) {
                 matches = false

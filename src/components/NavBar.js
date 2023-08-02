@@ -14,6 +14,7 @@ const linkStyles = {
 function NavBar() {
     return (
         <div className="navbar">
+            <h1 className="title">Card Collection</h1>
             <NavLink 
                 to="/" 
                 exact

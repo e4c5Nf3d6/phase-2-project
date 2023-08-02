@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+.title {
+  font-size: xx-large;
+}
+
 .navbar {
   background-color: #ADE5C2;
   padding: 20px;
@@ -64,4 +68,9 @@ label {
 .column2 {
   float: left;
   width: 40%
+}
+
+#deck h1 {
+  text-align: left;
+  padding: 20px;
 }

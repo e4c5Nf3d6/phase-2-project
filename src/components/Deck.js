@@ -3,10 +3,10 @@ import Container from "./Container"
 
 function Deck({ cards, onAddOrRemove }) {
     return (
-        <div>
+        <div id="deck">
             <h1>Creatures</h1>
             <Container cards={cards.filter(card => card.type === "creature")} onAddOrRemove={onAddOrRemove} />
-            
+
             <h1>Sorceries</h1>
             <Container cards={cards.filter(card => card.type === "sorcery")} onAddOrRemove={onAddOrRemove} />
 
