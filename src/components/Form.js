@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SelectOption from "./SelectOption";
 
-function Form() {
+function Form({ onSubmitCard }) {
     const [formData, setFormData] = useState({
         name: "",
         image: "",
@@ -14,7 +14,7 @@ function Form() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        console.log(formData)
+        onSubmitCard(formData)
         setFormData({
             name: "",
             image: "",

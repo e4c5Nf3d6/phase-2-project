@@ -34,6 +34,18 @@ function App() {
     })
   }
 
+  function submitCard(card) {
+    fetch(`http://localhost:3000/cards`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(card)
+    })
+    .then(r => r.json())
+    .then(data => setCards([...cards, data]))
+  }
+
   const deck = cards.filter(card => card.main === true)
 
   return (
@@ -44,7 +56,7 @@ function App() {
           <Home cards={cards} onAddOrRemove={addOrRemove} />
         </Route>
         <Route exact path="/add">
-          <Form />
+          <Form onSubmitCard={submitCard} />
         </Route>
         <Route exact path="/deck">
           <Deck cards={deck} onAddOrRemove={addOrRemove} />

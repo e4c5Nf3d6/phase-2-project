@@ -11,7 +11,7 @@ function SelectOption({ multi, name, options, selected, onHandleChange }) {
             className="basic-multi-select"
             classNamePrefix="select"
             onChange={e => onHandleChange(e)}
-            required
+            required={!multi}
         />
     )
 }
