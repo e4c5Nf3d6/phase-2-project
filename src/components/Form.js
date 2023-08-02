@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SelectColors from "./SelectColors";
+import SelectType from "./SelectType";
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ function Form() {
         main: false
     })
     const [selectedColors, setSelectedColors] = useState([])
+    const [selectedType, setSelectedType] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -22,6 +24,7 @@ function Form() {
             main: false
         })
         setSelectedColors([])
+        setSelectedType("")
     }
 
     function handleChange(e) {
@@ -42,9 +45,17 @@ function Form() {
         setSelectedColors(colors)
     }
 
+    function handleTypeChange(type) {
+        setFormData({
+            ...formData,
+            type: type.value
+        })
+        setSelectedType(type)
+    }
+
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <label htmlFor="name">Name</label>
                 <input 
                     type="text"
@@ -64,7 +75,8 @@ function Form() {
                     required
                 />
                 <label htmlFor="type">Type</label>
-                <select 
+                <SelectType id="type" onHandleTypeChange={handleTypeChange} type={selectedType} required />
+                {/* <select 
                     id="type"
                     value={formData.type} 
                     onChange={e => handleChange(e)}
@@ -77,10 +89,9 @@ function Form() {
                     <option value="artifact">Artifact</option>
                     <option value="enchantment">Enchantment</option>
                     <option value="land">Land</option>
-                </select>
+                </select> */}
                 <label htmlFor="colors">Colors</label>
                 <SelectColors id="colors" onHandleColorChange={handleColorChange} selectedColors={selectedColors} />
-
                 <input type="submit" value="Submit Card" />
             </form>
         </div>

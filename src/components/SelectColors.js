@@ -17,6 +17,7 @@ function SelectColors({ selectedColors, onHandleColorChange }) {
             className="basic-multi-select"
             classNamePrefix="select"
             onChange={e => onHandleColorChange(e)}
+            required
         />
     )
 }
