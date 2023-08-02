@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import SelectOption from "./SelectOption";
 
-function Filter({ filterData, onSetFilterData, selectedColors, onSetSelectedColors, selectedType, onSetSelectedType }) {
+function Filter({ filterData, onSetFilterData }) {
+    const [selectedColors, setSelectedColors] = useState([])
+    const [selectedType, setSelectedType] = useState(null)
 
     function handleChange(e) {
         const key = e.target.id
@@ -16,17 +18,17 @@ function Filter({ filterData, onSetFilterData, selectedColors, onSetSelectedColo
     function handleTypeChange(type) {
         onSetFilterData({
             ...filterData,
-            type: type ? type.value : ""
+            type: type ? type.value : "all"
         })
-        onSetSelectedType(type)
+        setSelectedType(type)
     }
 
     function handleColorChange(colors) {
         onSetFilterData({
             ...filterData,
-            colors: colors.map(option => option.value)
+            colors: colors.map(color => color.value)
         })
-        onSetSelectedColors(colors)
+        setSelectedColors(colors)
     }
 
     return (

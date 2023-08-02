@@ -183,6 +183,15 @@
       ],
       "main": true,
       "id": 17
+    },
+    {
+      "name": "Command Tower",
+      "image": "https://cards.scryfall.io/large/front/5/f/5f66d99c-7c2d-40b9-ae07-c3a84f018a0d.jpg?1592673778",
+      "transformed": "",
+      "type": "land",
+      "colors": [],
+      "main": true,
+      "id": 18
     }
   ]
 }

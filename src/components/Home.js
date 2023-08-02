@@ -8,15 +8,19 @@ function Home({ cards, onAddOrRemove }) {
         colors: [],
         type: 'all'
     })
-    const [selectedColors, setSelectedColors] = useState([])
-    const [selectedType, setSelectedType] = useState(null)
 
-    const filteredBySearch = cards.filter(card => card.name.toLowerCase().includes(filterData.search.toLowerCase()))
-    const filteredByType = filteredBySearch.filter(card => card.type.includes(selectedType ? selectedType.value : ""))
-    const filteredByColor = filteredByType.filter(card => {
+    const filteredCards = cards.filter(card => {
+        return card.name.toLowerCase().includes(filterData.search.toLowerCase())
+    }).filter(card => {
+        if (filterData.type === 'all') {
+            return true
+        } else {
+            return card.type === filterData.type
+        }
+    }).filter(card => {
         let matches = true
-        for (let i = 0; i < selectedColors.length; i++) {
-            if (!card.colors.includes(selectedColors[i].value)) {
+        for (let i = 0; i < filterData.colors.length; i++) {
+            if (!card.colors.includes(filterData.colors[i])) {
                 matches = false
             }
         }
@@ -28,13 +32,9 @@ function Home({ cards, onAddOrRemove }) {
             <Filter 
                 filterData={filterData} 
                 onSetFilterData={setFilterData} 
-                selectedColors={selectedColors}
-                onSetSelectedColors={setSelectedColors}
-                selectedType={selectedType}
-                onSetSelectedType={setSelectedType}
             />
             <Container 
-                cards={filteredByColor} 
+                cards={filteredCards} 
                 onAddOrRemove={onAddOrRemove}
             />
         </div>

@@ -87,6 +87,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                             placeholder="Type transformed image url here"
                             value={formData.transformed}
                             onChange={e => handleChange(e)}
+                            required={transforms}
                         />
                     </div>
                     : null
