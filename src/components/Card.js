@@ -2,10 +2,6 @@ import React from "react";
 
 function Card({ card, onAddOrRemove }) {
 
-    function handleClick() {
-        console.log(card.main)
-    }
-
     return (
         <div className="card">
             <div className="content">

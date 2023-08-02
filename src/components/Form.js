@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import SelectColors from "./SelectColors";
-import SelectType from "./SelectType";
+import SelectOption from "./SelectOption";
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -75,23 +74,36 @@ function Form() {
                     required
                 />
                 <label htmlFor="type">Type</label>
-                <SelectType id="type" onHandleTypeChange={handleTypeChange} type={selectedType} required />
-                {/* <select 
-                    id="type"
-                    value={formData.type} 
-                    onChange={e => handleChange(e)}
-                    required
-                >
-                    <option value="" disabled>Select Card Type</option>
-                    <option value="creature">Creature</option>
-                    <option value="sorcery">Sorcery</option>
-                    <option value="instant">Instant</option>
-                    <option value="artifact">Artifact</option>
-                    <option value="enchantment">Enchantment</option>
-                    <option value="land">Land</option>
-                </select> */}
+                <SelectOption 
+                    id="type" 
+                    name="type"
+                    onHandleChange={handleTypeChange} 
+                    selected={selectedType} 
+                    multi={false}
+                    options={[
+                        { value: 'creature', label: 'Creature' },
+                        { value: 'sorcery', label: 'Sorcery' },
+                        { value: 'instant', label: 'Instant' },
+                        { value: 'artifact', label: 'Artifact' },
+                        { value: 'enchantment', label: 'Enchantment' },
+                        { value: 'land', label: 'Land' }
+                    ]} 
+                />
                 <label htmlFor="colors">Colors</label>
-                <SelectColors id="colors" onHandleColorChange={handleColorChange} selectedColors={selectedColors} />
+                <SelectOption
+                    id="colors" 
+                    name="colors"
+                    onHandleChange={handleColorChange} 
+                    selected={selectedColors} 
+                    multi={true}
+                    options={[
+                        { value: 'black', label: 'Black' },
+                        { value: 'blue', label: 'Blue' },
+                        { value: 'green', label: 'Green' },
+                        { value: 'red', label: 'Red' },
+                        { value: 'white', label: 'White' }
+                    ]}
+                />
                 <input type="submit" value="Submit Card" />
             </form>
         </div>
