@@ -105,6 +105,27 @@
       ],
       "main": true,
       "id": 11
+    },
+    {
+      "name": "Zellix, Sanity Flayer",
+      "image": "https://cards.scryfall.io/large/front/a/5/a5d57db6-0aa5-4e28-b156-e97b74af2cee.jpg?1674140721",
+      "type": "creature",
+      "colors": [
+        "blue"
+      ],
+      "main": true,
+      "id": 12
+    },
+    {
+      "name": "Dimir Signet",
+      "image": "https://cards.scryfall.io/large/front/5/0/501d0d13-b6a4-415c-916e-fdb0809a67d8.jpg?1593814894",
+      "type": "artifact",
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "main": true,
+      "id": 13
     }
   ]
 }

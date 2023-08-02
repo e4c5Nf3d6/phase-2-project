@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 import SelectOption from "./SelectOption";
 
-function Form({ onSubmitCard }) {
-    const [formData, setFormData] = useState({
-        name: "",
-        image: "",
-        type: "",
-        colors: [],
-        main: false
-    })
+function Form({ onSubmitCard, formData, onSetFormData }) {
     const [selectedColors, setSelectedColors] = useState([])
     const [selectedType, setSelectedType] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault()
         onSubmitCard(formData)
-        setFormData({
+        onSetFormData({
             name: "",
             image: "",
             type: "",
@@ -30,14 +23,14 @@ function Form({ onSubmitCard }) {
         const key = e.target.id
         const value = e.target.value
 
-        setFormData({
+        onSetFormData({
             ...formData,
             [key]: value
         })
     }
 
     function handleColorChange(colors) {
-        setFormData({
+        onSetFormData({
             ...formData,
             colors: colors.map(option => option.value)
         })
@@ -45,7 +38,7 @@ function Form({ onSubmitCard }) {
     }
 
     function handleTypeChange(type) {
-        setFormData({
+        onSetFormData({
             ...formData,
             type: type ? type.value : ""
         })

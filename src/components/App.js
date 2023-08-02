@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom"
 import NavBar from "./NavBar";
 import Home from "./Home";
-import Form from "./Form"
+import AddCard from "./AddCard"
 import Deck from "./Deck";
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
           <Home cards={cards} onAddOrRemove={addOrRemove} />
         </Route>
         <Route exact path="/add">
-          <Form onSubmitCard={submitCard} />
+          <AddCard onSubmitCard={submitCard} />
         </Route>
         <Route exact path="/deck">
           <Deck cards={deck} onAddOrRemove={addOrRemove} />

@@ -32,6 +32,7 @@ function Filter({ filterData, onSetFilterData, selectedColors, onSetSelectedColo
     return (
         <div>
             <form>
+                <label htmlFor="search">Search for Cards</label>
                 <input 
                     id="search" 
                     type="text" 
@@ -39,7 +40,7 @@ function Filter({ filterData, onSetFilterData, selectedColors, onSetSelectedColo
                     value={filterData.search}
                     onChange={handleChange}
                 />
-                <label htmlFor="type">Type</label>
+                <label htmlFor="type">Filter by Type</label>
                 <SelectOption 
                     id="type" 
                     name="type"
@@ -55,7 +56,7 @@ function Filter({ filterData, onSetFilterData, selectedColors, onSetSelectedColo
                         { value: 'land', label: 'Land' }
                     ]} 
                 />
-                <label htmlFor="colors">Colors</label>
+                <label htmlFor="colors">Filter by Colors</label>
                 <SelectOption
                     id="colors" 
                     name="colors"

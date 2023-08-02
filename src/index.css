@@ -10,11 +10,6 @@ body {
   display: block;
 }
 
-.form {
-  text-align: left;
-  display: block;
-}
-
 label {
   display: block;
   margin-top: 5px;
@@ -22,16 +17,21 @@ label {
 }
 
 form {
-  margin: 20px
+  margin: 20px;
+  display: inline-block;
+  width: 300px;
+  text-align: center;
 }
 
 input[type=text] {
-  display: block;
+  display: inline-block;
   margin-bottom: 20px;
+  width: 300px;
   padding: 10px;
   box-sizing: border-box;
   border: 1px solid lightgray;
-  border-radius: 4px
+  border-radius: 4px;
+  text-align: center;
 }
 
 input[type=submit] {
@@ -42,4 +42,26 @@ input[type=submit] {
   background-color: green;
   border: none;
   border-radius: 4px;
+}
+
+.basic-multi-select {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.header {
+  margin: 20px;
+}
+
+.column1 {
+  float: left;
+  width: 60%;
+}
+
+.column2 {
+  float: left;
+  width: 40%
 }
