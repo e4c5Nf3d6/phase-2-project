@@ -126,6 +126,16 @@
       ],
       "main": true,
       "id": 13
+    },
+    {
+      "name": "Chasm Skulker",
+      "image": "https://cards.scryfall.io/large/front/9/7/97df5b12-bd8e-44dd-8b6c-1511eaa080c3.jpg?1562411351",
+      "type": "creature",
+      "colors": [
+        "blue"
+      ],
+      "main": true,
+      "id": 14
     }
   ]
 }
