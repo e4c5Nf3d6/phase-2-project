@@ -6,7 +6,7 @@ function AddCard({ onSubmitCard }) {
     const [formData, setFormData] = useState({
         name: "",
         image: "",
-        converted: null,
+        transformed: "",
         type: "",
         colors: [],
         main: false
@@ -23,10 +23,8 @@ function AddCard({ onSubmitCard }) {
                     onSetFormData={setFormData}
                 />
             </div>
-            <div className="column2 preview">
-                <div className="ui cards">
-                    <Card card={formData} preview={true} />
-                </div>
+            <div className="column2 ui cards">
+                <Card card={formData} preview={true} />
             </div>
         </div>
     )

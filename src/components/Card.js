@@ -5,10 +5,10 @@ function Card({ card, onAddOrRemove, preview=false }) {
     return (
         <div className="card">
             <div className="content">
-                {card.converted? 
-                    <div class="ui slide masked reveal image">
-                        <img src={card.image ? card.image : "https://www.mtgcardmaker.com/mcmaker/createcard.jpg"} class="visible content" alt={card.name} />
-                        <img src={card.converted} class="hidden content" alt={card.name} />
+                {card.transformed? 
+                    <div className="ui slide masked reveal image">
+                        <img src={card.image ? card.image : "https://www.mtgcardmaker.com/mcmaker/createcard.jpg"} className="visible content" alt={card.name} />
+                        <img src={card.transformed} className="hidden content" alt={card.name} />
                     </div>
                     :
                     <div className="image">

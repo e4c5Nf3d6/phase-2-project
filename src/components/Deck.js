@@ -16,10 +16,10 @@ function Deck({ cards, onAddOrRemove }) {
         <div id="deck">
             <div id="deckheader">
                 <h1 className="decktitle">My Deck</h1>
-                <div>
-                    <h3 id="decksubheader">Total Cards: {cards.length}</h3> 
-                    <h3 id="decksubheader">Deck Colors: {deckColors.join(", ")}</h3>
-                </div>        
+                <div className="decksubtitle">
+                    <span><h3>{deckColors.sort().map(color => color[0].toUpperCase() + color.slice(1)).join(", ")}</h3></span>                        
+                    <span><h3>{cards.length} Cards</h3></span>
+                </div>       
             </div>
 
             <div className="sectionheader">

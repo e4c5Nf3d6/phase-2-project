@@ -3,8 +3,8 @@ import SelectOption from "./SelectOption";
 
 function Form({ onSubmitCard, formData, onSetFormData }) {
     const [selectedColors, setSelectedColors] = useState([])
-    const [selectedType, setSelectedType] = useState("")
-    const [converts, setConverts] = useState(false)
+    const [selectedType, setSelectedType] = useState(null)
+    const [transforms, setTransforms] = useState(false)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -12,14 +12,14 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
         onSetFormData({
             name: "",
             image: "",
-            converted: null,
+            transformed: "",
             type: "",
             colors: [],
             main: false
         })
         setSelectedColors([])
         setSelectedType("")
-        setConverts(false)
+        setTransforms(false)
     }
 
     function handleChange(e) {
@@ -72,20 +72,20 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <div className="checkbox">
                     <input 
                         type="checkbox" 
-                        id="converts" 
-                        checked={converts} 
-                        onChange={e => setConverts(e.target.checked)} 
+                        id="transforms" 
+                        checked={transforms} 
+                        onChange={e => setTransforms(e.target.checked)} 
                     />
-                    <label htmlFor="add">This Card Converts</label>                    
+                    <label htmlFor="add">This Card Transforms</label>                    
                 </div>
-                {converts ?
+                {transforms ?
                     <div>
-                        <label htmlFor="converted">Converted Image</label>
+                        <label htmlFor="transformed">Transformed Image</label>
                         <input 
                             type="text"
-                            id="converted"
-                            placeholder="Type converted image url here"
-                            value={formData.converted}
+                            id="transformed"
+                            placeholder="Type transformed image url here"
+                            value={formData.transformed}
                             onChange={e => handleChange(e)}
                         />
                     </div>

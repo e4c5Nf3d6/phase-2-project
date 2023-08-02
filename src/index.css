@@ -79,10 +79,22 @@ label {
   margin: 20px
 }
 
+#deck h1 {
+  text-align: center;
+}
+
 #deck h2 {
   text-align: left;
   padding-top: 20px;
   padding-bottom: 10px;
+}
+
+.decksubtitle {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 .sectionheader {
@@ -95,11 +107,6 @@ label {
 #deckheader {
   margin-bottom: 20px;
   text-align: left;
-}
-
-#decksubheader {
-  margin-left: 40px;
-  margin-top: 0px;
 }
 
 .icon {

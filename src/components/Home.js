@@ -9,7 +9,7 @@ function Home({ cards, onAddOrRemove }) {
         type: 'all'
     })
     const [selectedColors, setSelectedColors] = useState([])
-    const [selectedType, setSelectedType] = useState("")
+    const [selectedType, setSelectedType] = useState(null)
 
     const filteredBySearch = cards.filter(card => card.name.toLowerCase().includes(filterData.search.toLowerCase()))
     const filteredByType = filteredBySearch.filter(card => card.type.includes(selectedType ? selectedType.value : ""))
