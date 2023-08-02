@@ -70,12 +70,24 @@ label {
   width: 40%
 }
 
-#deck h1 {
-  text-align: left;
-  padding: 20px;
-}
-
 .checkbox input[type=checkbox], label {
   display: inline-block;
   padding: 5px;
+}
+
+#deck {
+  margin: 20px
+}
+
+#deck h1 {
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.sectionheader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
 }
