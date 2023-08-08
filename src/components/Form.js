@@ -1,10 +1,41 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import SelectOption from "./SelectOption";
 
+function reducer(state, action) {
+    if (action.type === "submit") {
+        return {
+            selectedColors: [],
+            selectedType: null,
+            transforms: false
+        }
+    } else if (action.type === "setColors") {
+        return {
+            selectedColors: action.payload,
+            selectedType: state.type,
+            transforms: state.transforms
+        }
+    } else if (action.type === "setType") {
+        return {
+            selectedColors: state.colors,
+            selectedType: action.payload,
+            transforms: state.transforms
+        }
+    } else if (action.type === "setTransforms") {
+        return {
+            selectedColors: state.colors,
+            selectedType: state.type,
+            transforms: action.payload
+        }
+    }
+    return state
+}
+
 function Form({ onSubmitCard, formData, onSetFormData }) {
-    const [selectedColors, setSelectedColors] = useState([])
-    const [selectedType, setSelectedType] = useState(null)
-    const [transforms, setTransforms] = useState(false)
+    const [state, dispatch] = useReducer(reducer, {
+        selectedColors: [],
+        selectedType: null,
+        transforms: false
+    })
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -17,9 +48,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             colors: [],
             main: false
         })
-        setSelectedColors([])
-        setSelectedType("")
-        setTransforms(false)
+        dispatch({ type: "sumbit" })
     }
 
     function handleChange(e) {
@@ -37,7 +66,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             ...formData,
             colors: colors.map(option => option.value)
         })
-        setSelectedColors(colors)
+        dispatch({ type: "setColors", payload: colors })
     }
 
     function handleTypeChange(type) {
@@ -45,7 +74,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             ...formData,
             type: type ? type.value : ""
         })
-        setSelectedType(type)
+        dispatch({ type: "setType", payload: type })
     }
 
     return (
@@ -73,12 +102,12 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     <input 
                         type="checkbox" 
                         id="transforms" 
-                        checked={transforms} 
-                        onChange={e => setTransforms(e.target.checked)} 
+                        checked={state.transforms} 
+                        onChange={e => dispatch({ type: "setTransforms", payload: e.target.checked })} 
                     />
                     <label htmlFor="add">This Card Transforms</label>                    
                 </div>
-                {transforms ?
+                {state.transforms ?
                     <div>
                         <label htmlFor="transformed">Transformed Image</label>
                         <input 
@@ -87,7 +116,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                             placeholder="Type transformed image url here"
                             value={formData.transformed}
                             onChange={e => handleChange(e)}
-                            required={transforms}
+                            required={state.transforms}
                         />
                     </div>
                     : null
@@ -97,7 +126,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     id="type" 
                     name="type"
                     onHandleChange={handleTypeChange} 
-                    selected={selectedType} 
+                    selected={state.selectedType} 
                     multi={false}
                     options={[
                         { value: 'creature', label: 'Creature' },
@@ -113,7 +142,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     id="colors" 
                     name="colors"
                     onHandleChange={handleColorChange} 
-                    selected={selectedColors} 
+                    selected={state.selectedColors} 
                     multi={true}
                     options={[
                         { value: 'black', label: 'Black' },
