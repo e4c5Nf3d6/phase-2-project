@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import SelectOption from "./SelectOption";
 
 function Form({ onSubmitCard, formData, onSetFormData }) {
-    const [selectedColors, setSelectedColors] = useState([])
-    const [selectedType, setSelectedType] = useState(null)
-    const [transforms, setTransforms] = useState(false)
+    const [inputData, setInputData] = useState({
+        selectedColors: [],
+        selectedType: null,
+        transforms: false
+
+    })
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -17,9 +20,11 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             colors: [],
             main: false
         })
-        setSelectedColors([])
-        setSelectedType("")
-        setTransforms(false)
+        setInputData({
+            selectedColors: [],
+            selectedType: null,
+            transforms: false        
+        })
     }
 
     function handleChange(e) {
@@ -37,7 +42,10 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             ...formData,
             colors: colors.map(option => option.value)
         })
-        setSelectedColors(colors)
+        setInputData({
+            ...inputData,
+            selectedColors: colors
+        })
     }
 
     function handleTypeChange(type) {
@@ -45,7 +53,10 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             ...formData,
             type: type ? type.value : ""
         })
-        setSelectedType(type)
+        setInputData({
+            ...inputData,
+            selectedType: type
+        })
     }
 
     return (
@@ -73,12 +84,12 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     <input 
                         type="checkbox" 
                         id="transforms" 
-                        checked={transforms} 
-                        onChange={e => setTransforms(e.target.checked)} 
+                        checked={inputData.transforms} 
+                        onChange={e => setInputData({...inputData, transforms: e.target.checked})} 
                     />
                     <label htmlFor="add">This Card Transforms</label>                    
                 </div>
-                {transforms ?
+                {inputData.transforms ?
                     <div>
                         <label htmlFor="transformed">Transformed Image</label>
                         <input 
@@ -87,7 +98,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                             placeholder="Type transformed image url here"
                             value={formData.transformed}
                             onChange={e => handleChange(e)}
-                            required={transforms}
+                            required={inputData.transforms}
                         />
                     </div>
                     : null
@@ -97,7 +108,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     id="type" 
                     name="type"
                     onHandleChange={handleTypeChange} 
-                    selected={selectedType} 
+                    selected={inputData.selectedType} 
                     multi={false}
                     options={[
                         { value: 'creature', label: 'Creature' },
@@ -113,7 +124,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     id="colors" 
                     name="colors"
                     onHandleChange={handleColorChange} 
-                    selected={selectedColors} 
+                    selected={inputData.selectedColors} 
                     multi={true}
                     options={[
                         { value: 'black', label: 'Black' },

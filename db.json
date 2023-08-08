@@ -247,6 +247,17 @@
       ],
       "main": true,
       "id": 23
+    },
+    {
+      "name": "Deadeye Navigator",
+      "image": "https://cards.scryfall.io/large/front/f/2/f26a79b9-9f09-476e-b914-cade929dd852.jpg?1593813028",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "blue"
+      ],
+      "main": true,
+      "id": 24
     }
   ]
 }
