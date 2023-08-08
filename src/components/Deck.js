@@ -32,6 +32,11 @@ function Deck({ cards, iconImages, onAddOrRemove }) {
                 onAddOrRemove={onAddOrRemove}
             />
             <Section 
+                title={"Planeswalkers"}
+                cards={cards.filter(card => card.type === "planeswalker")} 
+                onAddOrRemove={onAddOrRemove}
+            />
+            <Section 
                 title={"Sorceries"}
                 cards={cards.filter(card => card.type === "sorcery")} 
                 onAddOrRemove={onAddOrRemove}

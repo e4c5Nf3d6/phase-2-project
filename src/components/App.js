@@ -60,13 +60,22 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Home cards={cards} onAddOrRemove={addOrRemove} />
+          <Home 
+            cards={cards} 
+            onAddOrRemove={addOrRemove} 
+          />
         </Route>
         <Route exact path="/add">
-          <AddCard onSubmitCard={submitCard} />
+          <AddCard 
+            onSubmitCard={submitCard} 
+          />
         </Route>
         <Route exact path="/deck">
-          <Deck cards={deck} iconImages={iconImages} onAddOrRemove={addOrRemove} />
+          <Deck 
+            cards={deck} 
+            iconImages={iconImages} 
+            onAddOrRemove={addOrRemove} 
+          />
         </Route>
       </Switch>
     </div>

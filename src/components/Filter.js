@@ -59,6 +59,7 @@ function Filter({ filterData, onSetFilterData }) {
                     multi={false}
                     options={[
                         { value: 'creature', label: 'Creature' },
+                        { value: 'planeswalker', label: 'Planeswalker' },
                         { value: 'sorcery', label: 'Sorcery' },
                         { value: 'instant', label: 'Instant' },
                         { value: 'artifact', label: 'Artifact' },

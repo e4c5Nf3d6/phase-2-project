@@ -112,6 +112,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     multi={false}
                     options={[
                         { value: 'creature', label: 'Creature' },
+                        { value: 'planeswalker', label: 'Planeswalker' },
                         { value: 'sorcery', label: 'Sorcery' },
                         { value: 'instant', label: 'Instant' },
                         { value: 'artifact', label: 'Artifact' },

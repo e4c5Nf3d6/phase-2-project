@@ -1,11 +1,11 @@
 {
   "icons": [
     {
-        "black": "/black.png",
-        "blue": "/blue.png",
-        "green": "/green.png",
-        "red": "/red.png",
-        "white": "/white.png"
+      "black": "/black.png",
+      "blue": "/blue.png",
+      "green": "/green.png",
+      "red": "/red.png",
+      "white": "/white.png"
     }
   ],
   "cards": [
@@ -90,7 +90,7 @@
       "transformed": "",
       "type": "artifact",
       "colors": [],
-      "main": true,
+      "main": false,
       "id": 8
     },
     {
@@ -254,7 +254,7 @@
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 23
     },
     {
@@ -278,6 +278,29 @@
       ],
       "main": false,
       "id": 25
+    },
+    {
+      "name": "Canyon Jerboa",
+      "image": "https://cards.scryfall.io/large/front/2/6/26b3938e-ebd7-4668-be3a-422c02ff5b08.jpg?1604195520",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "white"
+      ],
+      "main": false,
+      "id": 26
+    },
+    {
+      "name": "Ashiok, Dream Render",
+      "image": "https://cards.scryfall.io/large/front/f/2/f2df3258-c053-48a8-974f-d80899b2cd93.jpg?1557577343",
+      "transformed": "",
+      "type": "planeswalker",
+      "colors": [
+        "black",
+        "blue"
+      ],
+      "main": true,
+      "id": 27
     }
   ]
 }
