@@ -1,5 +1,11 @@
 import React from "react";
-import Container from "./Container"
+import Section from "./Section";
+
+import green from "../media/green.png"
+import blue from "../media/blue.png"
+import black from "../media/black.png"
+import red from "../media/red.png"
+import white from "../media/white.png"
 
 function Deck({ cards, onAddOrRemove }) {
 
@@ -12,51 +18,61 @@ function Deck({ cards, onAddOrRemove }) {
         }
     }
 
+    const icons = deckColors.sort().map(color => {
+        switch (color) {
+            case "green":
+                return <img key="green" className="icon" src={green} alt="green" />
+            case "blue":
+                return <img key="blue" className="icon" src={blue} alt="blue" />
+            case "black":
+                return <img key="black" className="icon" src={black} alt="black" />
+            case "white":
+                return <img key="white" className="icon" src={white} alt="white" />
+            case "red":
+                return <img key="red" className="icon" src={red} alt="red" />
+        }
+    })
+
     return (
         <div id="deck">
             <div id="deckheader">
                 <h1 className="decktitle">My Deck</h1>
                 <div className="decksubtitle">
-                    <span><h3>{deckColors.sort().map(color => color[0].toUpperCase() + color.slice(1)).join(", ")}</h3></span>                        
+                    <span>{icons}</span>                        
                     <span><h3>{cards.length} Cards</h3></span>
                 </div>       
             </div>
 
-            <div className="sectionheader">
-                <span><h2>Creatures</h2></span>
-                <span><h2>{cards.filter(card => card.type === "creature").length}</h2></span>                
-            </div>
-            <Container cards={cards.filter(card => card.type === "creature")} onAddOrRemove={onAddOrRemove} />
-
-            <div className="sectionheader">
-                <span><h2>Sorceries</h2></span>
-                <span><h2>{cards.filter(card => card.type === "sorcery").length}</h2></span>                
-            </div>
-            <Container cards={cards.filter(card => card.type === "sorcery")} onAddOrRemove={onAddOrRemove} />
-
-            <div className="sectionheader">
-                <span><h2>Instants</h2></span>
-                <span><h2>{cards.filter(card => card.type === "instant").length}</h2></span>                
-            </div>
-            <Container cards={cards.filter(card => card.type === "instant")} onAddOrRemove={onAddOrRemove} />
-
-            <div className="sectionheader">
-                <span><h2>Artifacts</h2></span>
-                <span><h2>{cards.filter(card => card.type === "artifact").length}</h2></span>                
-            </div>
-            <Container cards={cards.filter(card => card.type === "artifact")} onAddOrRemove={onAddOrRemove} />
-
-            <div className="sectionheader">
-                <span><h2>Enchantments</h2></span>
-                <span><h2>{cards.filter(card => card.type === "enchantment").length}</h2></span>                
-            </div>
-            <Container cards={cards.filter(card => card.type === "enchantment")} onAddOrRemove={onAddOrRemove} />
-
-            <div className="sectionheader">
-                <span><h2>Lands</h2></span>
-                <span><h2>{cards.filter(card => card.type === "land").length}</h2></span>                
-            </div>
-            <Container cards={cards.filter(card => card.type === "land")} onAddOrRemove={onAddOrRemove} />
+            <Section 
+                title={"Creatures"}
+                cards={cards.filter(card => card.type === "creature")} 
+                onAddOrRemove={onAddOrRemove}
+            />
+            <Section 
+                title={"Sorceries"}
+                cards={cards.filter(card => card.type === "sorcery")} 
+                onAddOrRemove={onAddOrRemove}
+            />
+            <Section 
+                title={"Instants"}
+                cards={cards.filter(card => card.type === "instant")} 
+                onAddOrRemove={onAddOrRemove}
+            />
+            <Section 
+                title={"Artifacts"}
+                cards={cards.filter(card => card.type === "artifact")} 
+                onAddOrRemove={onAddOrRemove}
+            />
+            <Section 
+                title={"Enchantments"}
+                cards={cards.filter(card => card.type === "enchantment")} 
+                onAddOrRemove={onAddOrRemove}
+            />
+            <Section 
+                title={"Lands"}
+                cards={cards.filter(card => card.type === "land")} 
+                onAddOrRemove={onAddOrRemove}
+            />
         </div>
     )
 }
