@@ -1,13 +1,7 @@
 import React from "react";
 import Section from "./Section";
 
-import green from "../media/green.png"
-import blue from "../media/blue.png"
-import black from "../media/black.png"
-import red from "../media/red.png"
-import white from "../media/white.png"
-
-function Deck({ cards, onAddOrRemove }) {
+function Deck({ cards, iconImages, onAddOrRemove }) {
 
     const deckColors = []
     for (let i = 0; i < cards.length; i++) {
@@ -19,18 +13,7 @@ function Deck({ cards, onAddOrRemove }) {
     }
 
     const icons = deckColors.sort().map(color => {
-        switch (color) {
-            case "green":
-                return <img key="green" className="icon" src={green} alt="green" />
-            case "blue":
-                return <img key="blue" className="icon" src={blue} alt="blue" />
-            case "black":
-                return <img key="black" className="icon" src={black} alt="black" />
-            case "white":
-                return <img key="white" className="icon" src={white} alt="white" />
-            case "red":
-                return <img key="red" className="icon" src={red} alt="red" />
-        }
+        return <img key={color} className="icon" src={iconImages[color]} alt={color} />
     })
 
     return (

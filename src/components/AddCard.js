@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "./Form";
-import Card from "./Card";
+import CardDisplay from "./CardDisplay";
 
 function AddCard({ onSubmitCard }) {
     const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function AddCard({ onSubmitCard }) {
                 />
             </div>
             <div className="column2 ui cards">
-                <Card card={formData} preview={true} />
+                <CardDisplay card={formData} preview={true} />
             </div>
         </div>
     )

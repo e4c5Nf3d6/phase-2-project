@@ -1,4 +1,13 @@
 {
+  "icons": [
+    {
+        "black": "/black.png",
+        "blue": "/blue.png",
+        "green": "/green.png",
+        "red": "/red.png",
+        "white": "/white.png"
+    }
+  ],
   "cards": [
     {
       "id": 1,
@@ -258,6 +267,17 @@
       ],
       "main": true,
       "id": 24
+    },
+    {
+      "name": "Armageddon",
+      "image": "https://cards.scryfall.io/large/front/5/e/5e3f9b44-7440-4d48-84ba-b5d55e836497.jpg?1562914090",
+      "transformed": "",
+      "type": "sorcery",
+      "colors": [
+        "white"
+      ],
+      "main": false,
+      "id": 25
     }
   ]
 }

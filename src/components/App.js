@@ -7,11 +7,18 @@ import Deck from "./Deck";
 
 function App() {
   const [cards, setCards] = useState([])
+  const [iconImages, setIconImages] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:3000/cards")
     .then(r => r.json())
     .then(data => setCards(data))
+  }, [])
+
+  useEffect(() => {
+    fetch("http://localhost:3000/icons")
+    .then(r => r.json())
+    .then(data => setIconImages(data[0]))
   }, [])
 
   function addOrRemove(card) {
@@ -59,7 +66,7 @@ function App() {
           <AddCard onSubmitCard={submitCard} />
         </Route>
         <Route exact path="/deck">
-          <Deck cards={deck} onAddOrRemove={addOrRemove} />
+          <Deck cards={deck} iconImages={iconImages} onAddOrRemove={addOrRemove} />
         </Route>
       </Switch>
     </div>

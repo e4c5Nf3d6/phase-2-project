@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card({ card, onAddOrRemove, preview=false }) {
+function CardDisplay({ card, onAddOrRemove, preview=false }) {
 
     return (
         <div className="card">
@@ -34,4 +34,4 @@ function Card({ card, onAddOrRemove, preview=false }) {
     )
 }
 
-export default Card
+export default CardDisplay
