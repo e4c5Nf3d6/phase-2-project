@@ -192,6 +192,61 @@
       "colors": [],
       "main": true,
       "id": 18
+    },
+    {
+      "name": "Bojuka Bog",
+      "image": "https://cards.scryfall.io/large/front/5/2/529c38b3-7397-4dac-9859-acd9cd451c32.jpg?1562287264",
+      "transformed": "",
+      "type": "land",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 19
+    },
+    {
+      "name": "Doom Weaver",
+      "image": "https://cards.scryfall.io/large/front/0/8/08c79a77-810d-4ee2-8afc-18ddfba41ad1.jpg?1644888641",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 20
+    },
+    {
+      "name": "Grazilaxx, Illithid Scholar",
+      "image": "https://cards.scryfall.io/large/front/9/8/98cca453-4611-4f3d-85d8-d74d260c7598.jpg?1627703337",
+      "transformed": "",
+      "type": "",
+      "colors": [
+        "blue"
+      ],
+      "main": true,
+      "id": 21
+    },
+    {
+      "name": "Sludge Monster",
+      "image": "https://cards.scryfall.io/large/front/5/7/57fa9aa8-86d2-4f1e-ac65-ace7e73a853c.jpg?1634349299",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "blue"
+      ],
+      "main": true,
+      "id": 22
+    },
+    {
+      "name": "Ruin Crab",
+      "image": "https://cards.scryfall.io/large/front/7/3/738ce273-c938-42d2-83b2-c4f5f4000b0b.jpg?1604194671",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "blue"
+      ],
+      "main": true,
+      "id": 23
     }
   ]
 }
