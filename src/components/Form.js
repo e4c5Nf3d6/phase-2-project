@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import useInputData from "../hooks/useInputData";
 import SelectOption from "./SelectOption";
 
 function Form({ onSubmitCard, formData, onSetFormData }) {
-    const [inputData, setInputData] = useState({
+    const { inputData, setType, setColors, setTransforms, resetInputData } = useInputData({
         selectedColors: [],
         selectedType: null,
         transforms: false
@@ -19,11 +20,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             colors: [],
             main: false
         })
-        setInputData({
-            selectedColors: [],
-            selectedType: null,
-            transforms: false        
-        })
+        resetInputData()
     }
 
     function handleChange(e) {
@@ -41,10 +38,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             ...formData,
             colors: colors.map(option => option.value)
         })
-        setInputData({
-            ...inputData,
-            selectedColors: colors
-        })
+        setColors(colors)
     }
 
     function handleTypeChange(type) {
@@ -52,10 +46,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             ...formData,
             type: type ? type.value : ""
         })
-        setInputData({
-            ...inputData,
-            selectedType: type
-        })
+        setType(type)
     }
 
     return (
@@ -83,8 +74,8 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     <input 
                         type="checkbox" 
                         id="transforms" 
-                        checked={inputData.transforms} 
-                        onChange={e => setInputData({...inputData, transforms: e.target.checked})} 
+                        checked={inputData.transforms}  
+                        onChange={setTransforms} 
                     />
                     <label htmlFor="add">This Card Transforms</label>                    
                 </div>

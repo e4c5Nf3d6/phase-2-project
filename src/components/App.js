@@ -7,27 +7,12 @@ import Deck from "./Deck";
 
 function App() {
   const [cards, setCards] = useState([])
-  // const [message, setMessage] = useState({
-  //   visible: false,
-  //   class: "",
-  //   content: ""
-  // })
 
   useEffect(() => {
     fetch("http://localhost:3000/cards")
     .then(r => r.json())
     .then(data => setCards(data))
   }, [])
-
-  // useEffect(() => {
-  //   let timeout
-  //   if (message) {
-  //     timeout = setTimeout(() => {
-  //       setMessage({ visible: false, content: "" })
-  //     }, 3000)
-  //   }
-  //   return () => clearTimeout(timeout)
-  // }, [message])
 
   function addOrRemove(card) {
     fetch(`http://localhost:3000/cards/${card.id}`, {
@@ -46,30 +31,6 @@ function App() {
       }))
     })
   }
-
-  // function submitCard(card) {
-  //   fetch(`http://localhost:3000/cards`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     body: JSON.stringify(card)
-  //   })
-  //   .then(r => r.json())
-  //   .then(data => {
-  //     setMessage({ 
-  //       visible: true, 
-  //       class: "success",
-  //       content: "Submission Successful!"
-  //     })
-  //     setCards([...cards, data])
-  //   })
-  //   .catch(() => setMessage({ 
-  //     visible: true, 
-  //     class: "failure",
-  //     content: "Something Went Wrong"
-  //   }))
-  // }
 
   const deck = cards.filter(card => card.main === true)
 

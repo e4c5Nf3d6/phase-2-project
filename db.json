@@ -538,6 +538,17 @@
       ],
       "main": false,
       "id": 48
+    },
+    {
+      "name": "Startled Awake // Persistent Nightmare",
+      "image": "https://cards.scryfall.io/large/front/e/6/e630fc56-a96f-4abf-be8d-f0f40d5a9edf.jpg?1576384252",
+      "transformed": "https://cards.scryfall.io/large/back/e/6/e630fc56-a96f-4abf-be8d-f0f40d5a9edf.jpg?1576384252",
+      "type": "sorcery",
+      "colors": [
+        "blue"
+      ],
+      "main": true,
+      "id": 49
     }
   ]
 }
