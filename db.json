@@ -482,6 +482,62 @@
       ],
       "main": false,
       "id": 43
+    },
+    {
+      "name": "Call of the Nightwing",
+      "image": "https://cards.scryfall.io/large/front/e/f/ef30a570-b988-42e8-8910-41fe39ffa260.jpg?1561851289",
+      "transformed": "",
+      "type": "sorcery",
+      "colors": [
+        "black",
+        "blue"
+      ],
+      "main": false,
+      "id": 44
+    },
+    {
+      "name": "Spoils of Blood",
+      "image": "https://cards.scryfall.io/large/front/d/9/d9df391c-eb76-45b1-a58d-8211538a22ac.jpg?1561960871",
+      "transformed": "",
+      "type": "instant",
+      "colors": [
+        "black"
+      ],
+      "main": false,
+      "id": 45
+    },
+    {
+      "name": "Wharf Infiltrator",
+      "image": "https://cards.scryfall.io/large/front/b/4/b434ba9e-528c-43b4-a463-0e697dce8d5d.jpg?1674141479",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "blue"
+      ],
+      "main": false,
+      "id": 46
+    },
+    {
+      "name": "Uchuulon",
+      "image": "https://cards.scryfall.io/large/front/e/c/ecef5fca-72ec-4aee-af6e-ee5d6f6bc567.jpg?1674140921",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 47
+    },
+    {
+      "name": "Profane Transfusion",
+      "image": "https://cards.scryfall.io/large/front/c/0/c04d8edb-7350-4ab5-b721-390784c66329.jpg?1608909911",
+      "transformed": "",
+      "type": "sorcery",
+      "colors": [
+        "black"
+      ],
+      "main": false,
+      "id": 48
     }
   ]
 }
