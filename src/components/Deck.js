@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import useDocumentTitle from "../hooks/useDocumentTitle";
-import Section from "./Section";
+import Section from "./Section"
+
+const iconImages = {
+    black: "/black.png",
+    blue: "/blue.png",
+    green: "/green.png",
+    red: "/red.png",
+    white: "/white.png"
+}
 
 function Deck({ cards, onAddOrRemove }) {
     const [deckTitle, setDeckTitle] = useState("")
     const [editing, setEditing] = useState(false)
-    const [iconImages, setIconImages] = useState([])
 
     useDocumentTitle(deckTitle)
-
-    useEffect(() => {
-        fetch("http://localhost:3000/icons")
-        .then(r => r.json())
-        .then(data => setIconImages(data))
-    }, [])
 
     useEffect(() => {
         fetch("http://localhost:3000/deck")

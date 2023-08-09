@@ -2,13 +2,6 @@
   "deck": {
     "name": "Have No Fear"
   },
-  "icons": {
-    "black": "/black.png",
-    "blue": "/blue.png",
-    "green": "/green.png",
-    "red": "/red.png",
-    "white": "/white.png"
-  },
   "cards": [
     {
       "id": 1,
@@ -158,7 +151,7 @@
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 14
     },
     {
@@ -300,7 +293,7 @@
         "black",
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 27
     },
     {
@@ -525,7 +518,7 @@
       "colors": [
         "black"
       ],
-      "main": true,
+      "main": false,
       "id": 47
     },
     {
@@ -571,6 +564,52 @@
       ],
       "main": false,
       "id": 51
+    },
+    {
+      "name": "Ashiok, Sculptor of Fears",
+      "image": "https://cards.scryfall.io/large/front/3/6/36a5fc37-e7bd-41a9-88ac-74a3f14fea8b.jpg?1581481496",
+      "transformed": "",
+      "type": "planeswalker",
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "main": true,
+      "id": 52
+    },
+    {
+      "name": "Ashiok, Nightmare Weaver",
+      "image": "https://cards.scryfall.io/large/front/5/9/599c3c9f-dfb7-4357-9d9c-9a1a4616b103.jpg?1562818514",
+      "transformed": "",
+      "type": "planeswalker",
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "main": true,
+      "id": 53
+    },
+    {
+      "name": "Enlightened Tutor",
+      "image": "https://cards.scryfall.io/large/front/0/c/0c9ebec9-3474-4062-9607-2e2a72f78299.jpg?1580013657",
+      "transformed": "",
+      "type": "instant",
+      "colors": [
+        "white"
+      ],
+      "main": false,
+      "id": 54
+    },
+    {
+      "name": "Gravestorm",
+      "image": "https://cards.scryfall.io/large/front/5/e/5e273b71-85ca-49d2-ba96-70cc0ae8d718.jpg?1562912365",
+      "transformed": "",
+      "type": "enchantment",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 55
     }
   ]
 }

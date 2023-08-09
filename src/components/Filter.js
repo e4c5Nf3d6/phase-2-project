@@ -8,6 +8,8 @@ function Filter({ filterData, onSetFilterData }) {
         selectedColors: []
     }, filterData, onSetFilterData)
 
+    console.log(inputData.selectedColors)
+
     return (
         <div>
             <form>
