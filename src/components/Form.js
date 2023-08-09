@@ -80,7 +80,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     onChange={e => handleChange(e)}
                     required
                 />
-                <div className="checkbox">
+                <div>
                     <input 
                         type="checkbox" 
                         id="transforms" 

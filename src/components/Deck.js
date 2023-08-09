@@ -48,30 +48,30 @@ function Deck({ cards, onAddOrRemove }) {
 
     return (
         <div id="deck">
-            <div id="deckheader">
-                <div className="decktitle">
-                    {editing ? 
-                        <input 
-                            autoFocus
-                            type="text" 
-                            value={deckTitle}
-                            onChange={e => setDeckTitle(e.target.value)}
-                            onBlur={editTitle}
-                        />
-                        :
-                        <h1 
-                            className="decktitle"
-                            onClick={() => setEditing(true)}
-                        >
-                        {deckTitle}
-                        </h1>
-                    }
-                </div>
-                <div className="decksubtitle">
-                    <span>{icons}</span>                        
-                    <span><h3>{cards.length} Cards</h3></span>
-                </div>       
+
+            <div className="decktitle">
+                {editing ? 
+                    <input 
+                        autoFocus
+                        type="text" 
+                        value={deckTitle}
+                        onChange={e => setDeckTitle(e.target.value)}
+                        onBlur={editTitle}
+                    />
+                    :
+                    <h1 
+                        className="decktitle"
+                        onClick={() => setEditing(true)}
+                    >
+                    {deckTitle}
+                    </h1>
+                }
             </div>
+            <div className="decksubtitle">
+                <span>{icons}</span>                        
+                <span><h3>{cards.length} Cards</h3></span>
+            </div>       
+
 
             <Section 
                 title={"Creatures"}

@@ -14,16 +14,17 @@ body {
   display: block;
 }
 
-label {
-  display: block;
-  margin-top: 5px;
-}
-
 form {
   margin: 20px;
   display: inline-block;
   width: 300px;
   text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 input[type=text] {
@@ -51,10 +52,6 @@ input[type=submit] {
   margin-bottom: 20px;
 }
 
-label {
-  font-weight: bold;
-}
-
 .header {
   margin: 20px;
 }
@@ -69,23 +66,23 @@ label {
   width: 40%
 }
 
-.checkbox input[type=checkbox], label {
+input[type=checkbox], label {
   display: inline-block;
   padding: 5px;
 }
 
 #deck {
-  margin: 20px
-}
-
-#deck h1 {
+  margin: 20px;
   text-align: center;
 }
 
-#deck h2 {
-  text-align: left;
-  padding-top: 20px;
-  padding-bottom: 10px;
+.decktitle {
+  height: 40px;
+}
+
+.decktitle input[type=text] {
+  display: inline-block;
+  font-size: large;
 }
 
 .decksubtitle {
@@ -94,6 +91,10 @@ label {
   border-bottom: 1px solid black;
   margin-bottom: 20px;
   padding-bottom: 5px;
+}
+
+.icon {
+  width: 30px;
 }
 
 .decksubtitle h3 {
@@ -105,23 +106,8 @@ label {
   justify-content: space-between;
   border-bottom: 2px solid black;
   margin-bottom: 20px;
-}
-
-#deckheader {
-  margin-bottom: 20px;
-}
-
-#deckheader input[type=text] {
-  display: inline-block;
-  font-size: large;
-}
-
-.decktitle {
-  height: 40px;
-}
-
-.icon {
-  width: 30px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .success {
