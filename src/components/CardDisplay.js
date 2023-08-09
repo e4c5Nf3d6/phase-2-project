@@ -5,7 +5,7 @@ function CardDisplay({ card, onAddOrRemove, preview=false }) {
     return (
         <div className="card">
             <div className="content">
-                {card.transformed? 
+                {card.transformed ? 
                     <div className="ui slide masked reveal image">
                         <img src={card.image ? card.image : "https://www.mtgcardmaker.com/mcmaker/createcard.jpg"} className="visible content" alt={card.name} />
                         <img src={card.transformed} className="hidden content" alt={card.name} />
@@ -17,8 +17,7 @@ function CardDisplay({ card, onAddOrRemove, preview=false }) {
                 }
             </div>
             <div className="extra content">
-                {(card.main === false)
-                    ?               
+                {card.main === false ?               
                     <div className="ui bottom attached button" onClick={preview ? null : () => onAddOrRemove(card)} >
                         <i className="add icon"></i>
                         Add to Deck

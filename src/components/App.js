@@ -42,9 +42,7 @@ function App() {
       setCards(cards.map(card => {
         if (card.id === data.id) {
           return data
-        } else {
-          return card
-        }
+        } else return card
       }))
     })
   }

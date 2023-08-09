@@ -6,7 +6,6 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
         selectedColors: [],
         selectedType: null,
         transforms: false
-
     })
 
     function handleSubmit(e) {
@@ -101,7 +100,8 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                             required={inputData.transforms}
                         />
                     </div>
-                    : null
+                    : 
+                    null
                 }   
                 <label htmlFor="type">Type</label>
                 <SelectOption 
@@ -135,7 +135,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                         { value: 'white', label: 'White' }
                     ]}
                 />
-                <div className="checkbox">
+                <div>
                     <input 
                         type="checkbox" 
                         id="main" 

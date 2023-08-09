@@ -31,7 +31,7 @@ function Deck({ cards, onAddOrRemove }) {
             setDeckTitle(data.name)
             setEditing(false)
         })
-      }
+    }
 
     const deckColors = []
     for (let i = 0; i < cards.length; i++) {
@@ -48,7 +48,6 @@ function Deck({ cards, onAddOrRemove }) {
 
     return (
         <div id="deck">
-
             <div className="decktitle">
                 {editing ? 
                     <input 
@@ -67,11 +66,11 @@ function Deck({ cards, onAddOrRemove }) {
                     </h1>
                 }
             </div>
+
             <div className="decksubtitle">
                 <span>{icons}</span>                        
                 <span><h3>{cards.length} Cards</h3></span>
-            </div>       
-
+            </div>   
 
             <Section 
                 title={"Creatures"}

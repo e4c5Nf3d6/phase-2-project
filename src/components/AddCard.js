@@ -27,7 +27,7 @@ function AddCard({ message, onSubmitCard }) {
             <div className="column2 ui cards">
                 <CardDisplay card={formData} preview={true} />
             </div>
-            {message.visible? 
+            {message.visible ? 
                 <div className={message.class === "success" ? "success" : "failure"}>
                     <h2>{message.content}</h2>
                 </div>
