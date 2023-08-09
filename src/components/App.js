@@ -7,12 +7,17 @@ import Deck from "./Deck";
 
 function App() {
   const [cards, setCards] = useState([])
-  const [iconImages, setIconImages] = useState([])
   const [message, setMessage] = useState({
     visible: false,
     class: "",
     content: ""
   })
+
+  useEffect(() => {
+    fetch("http://localhost:3000/cards")
+    .then(r => r.json())
+    .then(data => setCards(data))
+  }, [])
 
   useEffect(() => {
     let timeout
@@ -23,19 +28,6 @@ function App() {
     }
     return () => clearTimeout(timeout)
   }, [message])
-
-
-  useEffect(() => {
-    fetch("http://localhost:3000/cards")
-    .then(r => r.json())
-    .then(data => setCards(data))
-  }, [])
-
-  useEffect(() => {
-    fetch("http://localhost:3000/icons")
-    .then(r => r.json())
-    .then(data => setIconImages(data[0]))
-  }, [])
 
   function addOrRemove(card) {
     fetch(`http://localhost:3000/cards/${card.id}`, {
@@ -102,7 +94,6 @@ function App() {
         <Route exact path="/deck">
           <Deck 
             cards={deck} 
-            iconImages={iconImages} 
             onAddOrRemove={addOrRemove} 
           />
         </Route>

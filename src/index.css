@@ -109,7 +109,15 @@ label {
 
 #deckheader {
   margin-bottom: 20px;
-  text-align: left;
+}
+
+#deckheader input[type=text] {
+  display: inline-block;
+  font-size: large;
+}
+
+.decktitle {
+  height: 40px;
 }
 
 .icon {

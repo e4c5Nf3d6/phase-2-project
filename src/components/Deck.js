@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Section from "./Section";
 
-function Deck({ cards, iconImages, onAddOrRemove }) {
+function Deck({ cards, onAddOrRemove }) {
+    const [deckTitle, setDeckTitle] = useState("")
+    const [editing, setEditing] = useState(false)
+    const [iconImages, setIconImages] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/icons")
+        .then(r => r.json())
+        .then(data => setIconImages(data))
+    }, [])
+
+    useEffect(() => {
+        fetch("http://localhost:3000/deck")
+        .then(r => r.json())
+        .then(data => setDeckTitle(data.name))
+    }, [])
+
+    function editTitle() {
+        fetch(`http://localhost:3000/deck`, {
+          method: 'PATCH',
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ name: deckTitle })
+        })
+        .then(r => r.json())
+        .then(data => {
+            setDeckTitle(data.name)
+            setEditing(false)
+        })
+      }
 
     const deckColors = []
     for (let i = 0; i < cards.length; i++) {
@@ -19,7 +49,24 @@ function Deck({ cards, iconImages, onAddOrRemove }) {
     return (
         <div id="deck">
             <div id="deckheader">
-                <h1 className="decktitle">My Deck</h1>
+                <div className="decktitle">
+                    {editing ? 
+                        <input 
+                            autoFocus
+                            type="text" 
+                            value={deckTitle}
+                            onChange={e => setDeckTitle(e.target.value)}
+                            onBlur={editTitle}
+                        />
+                        :
+                        <h1 
+                            className="decktitle"
+                            onClick={() => setEditing(true)}
+                        >
+                        {deckTitle}
+                        </h1>
+                    }
+                </div>
                 <div className="decksubtitle">
                     <span>{icons}</span>                        
                     <span><h3>{cards.length} Cards</h3></span>

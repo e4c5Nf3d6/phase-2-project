@@ -1,13 +1,15 @@
 {
-  "icons": [
-    {
-      "black": "/black.png",
-      "blue": "/blue.png",
-      "green": "/green.png",
-      "red": "/red.png",
-      "white": "/white.png"
-    }
-  ],
+  "deck": {
+    "id": 1,
+    "name": "Have Some Fear"
+  },
+  "icons": {
+    "black": "/black.png",
+    "blue": "/blue.png",
+    "green": "/green.png",
+    "red": "/red.png",
+    "white": "/white.png"
+  },
   "cards": [
     {
       "id": 1,
