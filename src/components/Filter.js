@@ -50,7 +50,7 @@ function Filter({ filterData, onSetFilterData }) {
                     value={filterData.search}
                     onChange={handleChange}
                 />
-                <label htmlFor="type">Filter by Type</label>
+                <label htmlFor="type">Filter Cards by Type</label>
                 <SelectOption 
                     id="type" 
                     name="type"
@@ -67,7 +67,7 @@ function Filter({ filterData, onSetFilterData }) {
                         { value: 'land', label: 'Land' }
                     ]} 
                 />
-                <label htmlFor="colors">Filter by Colors</label>
+                <label htmlFor="colors">Filter Cards by Colors</label>
                 <SelectOption
                     id="colors" 
                     name="colors"

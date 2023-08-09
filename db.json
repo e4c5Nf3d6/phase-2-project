@@ -301,6 +301,141 @@
       ],
       "main": true,
       "id": 27
+    },
+    {
+      "name": "Ashiok, Nightmare Muse",
+      "image": "https://cards.scryfall.io/large/front/1/1/112eb5ce-4fe5-45b3-b810-79fef74b07f9.jpg?1581480976",
+      "transformed": "",
+      "type": "planeswalker",
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "main": true,
+      "id": 28
+    },
+    {
+      "name": "The One Ring",
+      "image": "https://cards.scryfall.io/large/front/9/3/93de9042-cc62-4ade-8d8d-68fdbc84bfae.jpg?1691516706",
+      "transformed": "",
+      "type": "artifact",
+      "colors": [],
+      "main": false,
+      "id": 29
+    },
+    {
+      "name": "Skullclamp",
+      "image": "https://cards.scryfall.io/large/front/a/3/a36fd6d8-66a2-49d1-b9f3-b400ebc03674.jpg?1682210228",
+      "transformed": "",
+      "type": "artifact",
+      "colors": [],
+      "main": false,
+      "id": 30
+    },
+    {
+      "name": "Brainstorm",
+      "image": "https://cards.scryfall.io/large/front/4/8/48070245-1370-4cf1-be15-d4e8a8b92ba8.jpg?1631586166",
+      "transformed": "",
+      "type": "instant",
+      "colors": [
+        "blue"
+      ],
+      "main": false,
+      "id": 31
+    },
+    {
+      "name": "Lightning Bolt",
+      "image": "https://cards.scryfall.io/large/front/f/2/f29ba16f-c8fb-42fe-aabf-87089cb214a7.jpg?1673147852",
+      "transformed": "",
+      "type": "instant",
+      "colors": [
+        "red"
+      ],
+      "main": false,
+      "id": 32
+    },
+    {
+      "name": "Sol Ring",
+      "image": "https://cards.scryfall.io/large/front/4/6/46ca0b66-a000-4483-b916-f5b89e710244.jpg?1689999818",
+      "transformed": "",
+      "type": "artifact",
+      "colors": [],
+      "main": false,
+      "id": 33
+    },
+    {
+      "name": "Demonic Tutor",
+      "image": "https://cards.scryfall.io/large/front/a/2/a24b4cb6-cebb-428b-8654-74347a6a8d63.jpg?1689997045",
+      "transformed": "",
+      "type": "sorcery",
+      "colors": [
+        "black"
+      ],
+      "main": false,
+      "id": 34
+    },
+    {
+      "name": "Diabolic Tutor",
+      "image": "https://cards.scryfall.io/large/front/d/6/d650dd8c-edd8-44e4-ae95-aaaf84557a72.jpg?1592672628",
+      "transformed": "",
+      "type": "sorcery",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 35
+    },
+    {
+      "name": "Sheoldred, the Apocalypse",
+      "image": "https://cards.scryfall.io/large/front/d/6/d67be074-cdd4-41d9-ac89-0a0456c4e4b2.jpg?1674057568",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "black"
+      ],
+      "main": false,
+      "id": 36
+    },
+    {
+      "name": "Channel",
+      "image": "https://cards.scryfall.io/large/front/c/e/ce54c7c1-3401-4414-8da0-5846cb0ae1b4.jpg?1618695674",
+      "transformed": "",
+      "type": "sorcery",
+      "colors": [
+        "green"
+      ],
+      "main": false,
+      "id": 37
+    },
+    {
+      "name": "Obelisk of Alara",
+      "image": "https://cards.scryfall.io/large/front/5/c/5cc12ebe-54d8-4b91-8c68-3cde5690e26a.jpg?1562801225",
+      "transformed": "",
+      "type": "artifact",
+      "colors": [
+        "black",
+        "green",
+        "blue",
+        "red",
+        "white"
+      ],
+      "main": false,
+      "id": 38
+    },
+    {
+      "name": "Etched Monstrosity",
+      "image": "https://cards.scryfall.io/large/front/f/6/f6be7947-b929-408d-ad67-3b07b93dd36e.jpg?1562269329",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "black",
+        "blue",
+        "green",
+        "red",
+        "white"
+      ],
+      "main": false,
+      "id": 39
     }
   ]
 }

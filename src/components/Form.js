@@ -66,7 +66,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <input 
                     type="text"
                     id="name"
-                    placeholder="Type card name here"
+                    placeholder="Type Card Name"
                     value={formData.name}
                     onChange={e => handleChange(e)}
                     required
@@ -75,7 +75,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <input 
                     type="text"
                     id="image"
-                    placeholder="Type image url here"
+                    placeholder="Type Image URL"
                     value={formData.image}
                     onChange={e => handleChange(e)}
                     required

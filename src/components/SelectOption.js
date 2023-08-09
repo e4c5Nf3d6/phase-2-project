@@ -6,6 +6,7 @@ function SelectOption({ multi, name, options, selected, onHandleChange }) {
         <Select 
             isMulti={multi}
             isClearable
+            placeholder={`Select ${name[0].toUpperCase() + name.slice(1)}`}
             name={name}
             value={selected}
             options={options}
