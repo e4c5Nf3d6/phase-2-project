@@ -12,23 +12,17 @@ function Home({ cards, onAddOrRemove }) {
 
     useDocumentTitle("Home")
 
-    const filteredCards = cards.filter(card => {
-        return card.name.toLowerCase().includes(filterData.search.toLowerCase())
-    }).filter(card => {
-        if (filterData.type === 'all') {
-            return true
-        } else {
-            return card.type === filterData.type
-        }
-    }).filter(card => {
-        let matches = true
-        for (let i = 0; i < filterData.colors.length; i++) {
-            if (!card.colors.includes(filterData.colors[i])) {
-                matches = false
+    const filteredCards = cards.filter(card => card.name.toLowerCase().includes(filterData.search.toLowerCase()))
+        .filter(card => (filterData.type === 'all') ? true : card.type === filterData.type)
+        .filter(card => {
+            let matches = true
+            for (let i = 0; i < filterData.colors.length; i++) {
+                if (!card.colors.includes(filterData.colors[i])) {
+                    matches = false
+                }
             }
-        }
-        return matches
-    })
+            return matches
+        })
 
     return (
         <div>
