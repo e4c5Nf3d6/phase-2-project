@@ -469,7 +469,7 @@
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 42
     },
     {
@@ -560,6 +560,17 @@
       ],
       "main": false,
       "id": 50
+    },
+    {
+      "name": "Extricator of Sin // Extricator of Flesh",
+      "image": "https://cards.scryfall.io/large/front/b/6/b6867ddd-f953-41c6-ba36-86ae2c14c908.jpg?1576383847",
+      "transformed": "https://cards.scryfall.io/large/back/b/6/b6867ddd-f953-41c6-ba36-86ae2c14c908.jpg?1576383847",
+      "type": "creature",
+      "colors": [
+        "white"
+      ],
+      "main": false,
+      "id": 51
     }
   ]
 }
