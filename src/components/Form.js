@@ -1,9 +1,9 @@
 import React from "react";
-import useSelect from "../hooks/useSelect";
+import useHandleInputData from "../hooks/useHandleInputData";
 import SelectOption from "./SelectOption";
 
 function Form({ onSubmitCard, formData, onSetFormData }) {
-    const { inputData, selectType, selectColors, selectTransforms, resetInputData } = useSelect({
+    const { inputData, handleChange, selectType, selectColors, selectTransforms, resetData } = useHandleInputData({
         selectedColors: [],
         selectedType: null,
         transforms: false
@@ -12,25 +12,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
     function handleSubmit(e) {
         e.preventDefault()
         onSubmitCard(formData)
-        onSetFormData({
-            name: "",
-            image: "",
-            transformed: "",
-            type: "",
-            colors: [],
-            main: false
-        })
-        resetInputData()
-    }
-
-    function handleChange(e) {
-        const key = e.target.id
-        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
-
-        onSetFormData({
-            ...formData,
-            [key]: value
-        })
+        resetData()
     }
 
     return (

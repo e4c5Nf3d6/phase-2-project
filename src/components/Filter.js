@@ -1,22 +1,12 @@
 import React from "react";
-import useSelect from "../hooks/useSelect";
+import useHandleInputData from "../hooks/useHandleInputData";
 import SelectOption from "./SelectOption";
 
 function Filter({ filterData, onSetFilterData }) {
-    const { inputData, selectType, selectColors } = useSelect({
+    const { inputData, handleChange, selectType, selectColors } = useHandleInputData({
         selectedType: null,
         selectedColors: []
     }, filterData, onSetFilterData)
-
-    function handleChange(e) {
-        const key = e.target.id
-        const value = e.target.value
-
-        onSetFilterData({
-            ...filterData,
-            [key]: value
-        })
-    }
 
     return (
         <div>

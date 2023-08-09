@@ -1,7 +1,17 @@
 import { useState } from "react";
 
-function useSelect(initialInput, data, onSetData) {
+function useHandleInputData(initialInput, data, onSetData) {
     const [inputData, setInputData] = useState(initialInput)
+
+    function handleChange(e) {
+        const key = e.target.id
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
+
+        onSetData({
+            ...data,
+            [key]: value
+        })
+    }
 
     function selectType(type) {
         onSetData({
@@ -32,15 +42,23 @@ function useSelect(initialInput, data, onSetData) {
         })
     }
 
-    function resetInputData() {
+    function resetData() {
         setInputData({
             selectedColors: [],
             selectedType: null,
             transforms: false
         })
+        onSetData({
+            name: "",
+            image: "",
+            transformed: "",
+            type: "",
+            colors: [],
+            main: false
+        })
     }
 
-    return { inputData, selectType, selectColors, selectTransforms, resetInputData }
+    return { inputData, handleChange, selectType, selectColors, selectTransforms, resetData }
 }
 
-export default useSelect
+export default useHandleInputData
