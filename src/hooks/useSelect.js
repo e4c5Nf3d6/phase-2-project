@@ -1,23 +1,31 @@
 import { useState } from "react";
 
-function useInputData(initialInput) {
+function useSelect(initialInput, data, onSetData) {
     const [inputData, setInputData] = useState(initialInput)
 
-    function setType(type) {
+    function selectType(type) {
+        onSetData({
+            ...data,
+            type: type ? type.value : ""
+        })
         setInputData({
             ...inputData,
             selectedType: type
         })
     }
 
-    function setColors(colors) {
+    function selectColors(colors) {
+        onSetData({
+            ...data,
+            colors: colors.map(color => color.value)
+        })
         setInputData({
             ...inputData,
             selectedColors: colors
         })
     }
 
-    function setTransforms(e) {
+    function selectTransforms(e) {
         setInputData({
             ...inputData,
             transforms: e.target.checked
@@ -32,7 +40,7 @@ function useInputData(initialInput) {
         })
     }
 
-    return { inputData, setType, setColors, setTransforms, resetInputData }
+    return { inputData, selectType, selectColors, selectTransforms, resetInputData }
 }
 
-export default useInputData
+export default useSelect

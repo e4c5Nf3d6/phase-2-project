@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import useInputData from "../hooks/useInputData";
+import React from "react";
+import useSelect from "../hooks/useSelect";
 import SelectOption from "./SelectOption";
 
 function Form({ onSubmitCard, formData, onSetFormData }) {
-    const { inputData, setType, setColors, setTransforms, resetInputData } = useInputData({
+    const { inputData, selectType, selectColors, selectTransforms, resetInputData } = useSelect({
         selectedColors: [],
         selectedType: null,
         transforms: false
-    })
+    }, formData, onSetFormData)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -31,22 +31,6 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
             ...formData,
             [key]: value
         })
-    }
-
-    function handleColorChange(colors) {
-        onSetFormData({
-            ...formData,
-            colors: colors.map(option => option.value)
-        })
-        setColors(colors)
-    }
-
-    function handleTypeChange(type) {
-        onSetFormData({
-            ...formData,
-            type: type ? type.value : ""
-        })
-        setType(type)
     }
 
     return (
@@ -75,7 +59,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                         type="checkbox" 
                         id="transforms" 
                         checked={inputData.transforms}  
-                        onChange={setTransforms} 
+                        onChange={selectTransforms} 
                     />
                     <label htmlFor="add">This Card Transforms</label>                    
                 </div>
@@ -98,7 +82,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <SelectOption 
                     id="type" 
                     name="type"
-                    onHandleChange={handleTypeChange} 
+                    onHandleChange={selectType} 
                     selected={inputData.selectedType} 
                     multi={false}
                     options={[
@@ -115,7 +99,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <SelectOption
                     id="colors" 
                     name="colors"
-                    onHandleChange={handleColorChange} 
+                    onHandleChange={selectColors} 
                     selected={inputData.selectedColors} 
                     multi={true}
                     options={[

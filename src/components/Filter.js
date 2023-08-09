@@ -1,12 +1,12 @@
 import React from "react";
-import useInputData from "../hooks/useInputData";
+import useSelect from "../hooks/useSelect";
 import SelectOption from "./SelectOption";
 
 function Filter({ filterData, onSetFilterData }) {
-    const { inputData, setType, setColors } = useInputData({
+    const { inputData, selectType, selectColors } = useSelect({
         selectedType: null,
         selectedColors: []
-    })
+    }, filterData, onSetFilterData)
 
     function handleChange(e) {
         const key = e.target.id
@@ -16,22 +16,6 @@ function Filter({ filterData, onSetFilterData }) {
             ...filterData,
             [key]: value
         })
-    }
-
-    function handleTypeChange(type) {
-        onSetFilterData({
-            ...filterData,
-            type: type ? type.value : "all"
-        })
-        setType(type)
-    }
-
-    function handleColorChange(colors) {
-        onSetFilterData({
-            ...filterData,
-            colors: colors.map(color => color.value)
-        })
-        setColors(colors)
     }
 
     return (
@@ -49,7 +33,7 @@ function Filter({ filterData, onSetFilterData }) {
                 <SelectOption 
                     id="type" 
                     name="type"
-                    onHandleChange={handleTypeChange} 
+                    onHandleChange={selectType} 
                     selected={inputData.selectedType} 
                     multi={false}
                     options={[
@@ -66,7 +50,7 @@ function Filter({ filterData, onSetFilterData }) {
                 <SelectOption
                     id="colors" 
                     name="colors"
-                    onHandleChange={handleColorChange} 
+                    onHandleChange={selectColors} 
                     selected={inputData.selectedColors} 
                     multi={true}
                     options={[

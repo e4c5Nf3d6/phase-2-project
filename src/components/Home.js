@@ -7,13 +7,13 @@ function Home({ cards, onAddOrRemove }) {
     const [filterData, setFilterData] = useState({
         search: "",
         colors: [],
-        type: 'all'
+        type: ""
     })
 
     useDocumentTitle("Home")
 
     const filteredCards = cards.filter(card => card.name.toLowerCase().includes(filterData.search.toLowerCase()))
-        .filter(card => (filterData.type === 'all') ? true : card.type === filterData.type)
+        .filter(card => (filterData.type === "") ? true : card.type === filterData.type)
         .filter(card => {
             let matches = true
             for (let i = 0; i < filterData.colors.length; i++) {
