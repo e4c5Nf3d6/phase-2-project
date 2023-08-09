@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import SelectOption from "./SelectOption";
 
 function Filter({ filterData, onSetFilterData }) {
-    const [inputData, setInputData] = useState({
-        selectedColors: [],
-        selectedType: null
-    })
+    const [selectedColors, setSelectedColors] = useState([])
+    const [selectedType, setSelectedType] = useState(null)
 
     function handleChange(e) {
         const key = e.target.id
@@ -22,10 +20,7 @@ function Filter({ filterData, onSetFilterData }) {
             ...filterData,
             type: type ? type.value : "all"
         })
-        setInputData({
-            ...inputData, 
-            selectedType: type
-        })
+        setSelectedType(type)
     }
 
     function handleColorChange(colors) {
@@ -33,10 +28,7 @@ function Filter({ filterData, onSetFilterData }) {
             ...filterData,
             colors: colors.map(color => color.value)
         })
-        setInputData({
-            ...inputData,
-            selectedColors: colors
-        })
+        setSelectedColors(colors)
     }
 
     return (
@@ -55,7 +47,7 @@ function Filter({ filterData, onSetFilterData }) {
                     id="type" 
                     name="type"
                     onHandleChange={handleTypeChange} 
-                    selected={inputData.selectedType} 
+                    selected={selectedType} 
                     multi={false}
                     options={[
                         { value: 'creature', label: 'Creature' },
@@ -72,7 +64,7 @@ function Filter({ filterData, onSetFilterData }) {
                     id="colors" 
                     name="colors"
                     onHandleChange={handleColorChange} 
-                    selected={inputData.selectedColors} 
+                    selected={selectedColors} 
                     multi={true}
                     options={[
                         { value: 'black', label: 'Black' },
