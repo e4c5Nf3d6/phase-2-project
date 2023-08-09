@@ -8,6 +8,22 @@ import Deck from "./Deck";
 function App() {
   const [cards, setCards] = useState([])
   const [iconImages, setIconImages] = useState([])
+  const [message, setMessage] = useState({
+    visible: false,
+    class: "",
+    content: ""
+  })
+
+  useEffect(() => {
+    let timeout
+    if (message) {
+      timeout = setTimeout(() => {
+        setMessage({ visible: false, content: "" })
+      }, 3000)
+    }
+    return () => clearTimeout(timeout)
+  }, [message])
+
 
   useEffect(() => {
     fetch("http://localhost:3000/cards")
@@ -50,7 +66,19 @@ function App() {
       body: JSON.stringify(card)
     })
     .then(r => r.json())
-    .then(data => setCards([...cards, data]))
+    .then(data => {
+      setMessage({ 
+        visible: true, 
+        class: "success",
+        content: "Submission Successful!"
+      })
+      setCards([...cards, data])
+    })
+    .catch(() => setMessage({ 
+      visible: true, 
+      class: "failure",
+      content: "Something Went Wrong"
+    }))
   }
 
   const deck = cards.filter(card => card.main === true)
@@ -68,6 +96,7 @@ function App() {
         <Route exact path="/add">
           <AddCard 
             onSubmitCard={submitCard} 
+            message={message}
           />
         </Route>
         <Route exact path="/deck">

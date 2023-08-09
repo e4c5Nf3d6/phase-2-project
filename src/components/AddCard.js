@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Form from "./Form";
 import CardDisplay from "./CardDisplay";
 
-function AddCard({ onSubmitCard }) {
+function AddCard({ message, onSubmitCard }) {
     const [formData, setFormData] = useState({
         name: "",
         image: "",
@@ -11,6 +11,7 @@ function AddCard({ onSubmitCard }) {
         colors: [],
         main: false
     })
+
     return(
         <div>
             <div className="header">
@@ -26,6 +27,13 @@ function AddCard({ onSubmitCard }) {
             <div className="column2 ui cards">
                 <CardDisplay card={formData} preview={true} />
             </div>
+            {message.visible? 
+                <div className={message.class === "success" ? "success" : "failure"}>
+                    <h2>{message.content}</h2>
+                </div>
+                :
+                null
+            }   
         </div>
     )
 }

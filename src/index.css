@@ -115,3 +115,29 @@ label {
 .icon {
   width: 30px;
 }
+
+.success {
+  position: fixed;
+  background-color: darkgreen;
+  color: white;
+  width: 225px;
+  height: 75px;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 5px;
+  border-radius: 10px
+}
+
+.failure {
+  position: fixed;
+  background-color: darkred;
+  color: white;
+  width: 225px;
+  height: 75px;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 5px;
+  border-radius: 10px
+}
