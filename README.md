@@ -28,3 +28,7 @@ Next steps for this project include:
 - Adding a commander option
 - Handling multiples of the same card
 - Allowing for the creation of multiple decks
+
+## Acknowledgments
+
+Thanks to Wizards of the Coast for images. 
