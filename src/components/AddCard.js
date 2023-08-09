@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import Form from "./Form";
 import CardDisplay from "./CardDisplay";
 
@@ -11,6 +12,8 @@ function AddCard({ message, onSubmitCard }) {
         colors: [],
         main: false
     })
+
+    useDocumentTitle("Add a Card")
 
     return(
         <div>

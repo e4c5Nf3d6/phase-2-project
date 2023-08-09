@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import Filter from "./Filter"
 import Container from "./Container"
 
@@ -8,6 +9,8 @@ function Home({ cards, onAddOrRemove }) {
         colors: [],
         type: 'all'
     })
+
+    useDocumentTitle("Home")
 
     const filteredCards = cards.filter(card => {
         return card.name.toLowerCase().includes(filterData.search.toLowerCase())

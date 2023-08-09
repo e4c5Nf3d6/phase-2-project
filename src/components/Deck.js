@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import Section from "./Section";
 
 function Deck({ cards, onAddOrRemove }) {
     const [deckTitle, setDeckTitle] = useState("")
     const [editing, setEditing] = useState(false)
     const [iconImages, setIconImages] = useState([])
+
+    useDocumentTitle(deckTitle)
 
     useEffect(() => {
         fetch("http://localhost:3000/icons")
