@@ -31,4 +31,5 @@ Next steps for this project include:
 
 ## Acknowledgments
 
-Thanks to Wizards of the Coast for images. 
+- Thanks to [Jed Watson](https://github.com/JedWatson) for [React Select](https://github.com/JedWatson/react-select)
+- Thanks to Wizards of the Coast for images. 
