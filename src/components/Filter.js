@@ -3,12 +3,10 @@ import useHandleInputData from "../hooks/useHandleInputData";
 import SelectOption from "./SelectOption";
 
 function Filter({ filterData, onSetFilterData }) {
-    const { inputData, handleChange, selectType, selectColors } = useHandleInputData({
-        selectedType: null,
-        selectedColors: []
+    const { inputData, handleChange, handleSelect } = useHandleInputData({
+        type: null,
+        colors: []
     }, filterData, onSetFilterData)
-
-    console.log(inputData.selectedColors)
 
     return (
         <div>
@@ -25,8 +23,8 @@ function Filter({ filterData, onSetFilterData }) {
                 <SelectOption 
                     id="type" 
                     name="type"
-                    onHandleChange={selectType} 
-                    selected={inputData.selectedType} 
+                    onHandleChange={selected => handleSelect("type", selected)} 
+                    selected={inputData.type} 
                     multi={false}
                     options={[
                         { value: 'creature', label: 'Creature' },
@@ -42,8 +40,8 @@ function Filter({ filterData, onSetFilterData }) {
                 <SelectOption
                     id="colors" 
                     name="colors"
-                    onHandleChange={selectColors} 
-                    selected={inputData.selectedColors} 
+                    onHandleChange={selected => handleSelect("colors", selected)} 
+                    selected={inputData.colors} 
                     multi={true}
                     options={[
                         { value: 'black', label: 'Black' },

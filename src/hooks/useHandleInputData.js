@@ -13,32 +13,26 @@ function useHandleInputData(initialInput, data, onSetData) {
         })
     }
 
-    function selectType(type) {
-        onSetData({
-            ...data,
-            type: type ? type.value : ""
-        })
+    function handleSelect(key, selected) {
+        switch (key) {
+            case "type":
+                onSetData({
+                    ...data,
+                    type: selected ? selected.value : ""
+                })
+                break
+            case "colors":
+                onSetData({
+                    ...data,
+                    colors: selected.map(color => color.value)
+                })
+                break
+            default:
+                break
+        }
         setInputData({
             ...inputData,
-            selectedType: type
-        })
-    }
-
-    function selectColors(colors) {
-        onSetData({
-            ...data,
-            colors: colors.map(color => color.value)
-        })
-        setInputData({
-            ...inputData,
-            selectedColors: colors
-        })
-    }
-
-    function selectTransforms(e) {
-        setInputData({
-            ...inputData,
-            transforms: e.target.checked
+            [key]: key === "transforms" ? selected.target.checked : selected
         })
     }
 
@@ -58,7 +52,7 @@ function useHandleInputData(initialInput, data, onSetData) {
         })
     }
 
-    return { inputData, handleChange, selectType, selectColors, selectTransforms, resetData }
+    return { inputData, handleChange, handleSelect, resetData }
 }
 
 export default useHandleInputData

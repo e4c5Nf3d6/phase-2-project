@@ -3,9 +3,9 @@ import useHandleInputData from "../hooks/useHandleInputData";
 import SelectOption from "./SelectOption";
 
 function Form({ onSubmitCard, formData, onSetFormData }) {
-    const { inputData, handleChange, selectType, selectColors, selectTransforms, resetData } = useHandleInputData({
-        selectedColors: [],
-        selectedType: null,
+    const { inputData, handleChange, handleSelect, resetData } = useHandleInputData({
+        colors: [],
+        type: null,
         transforms: false
     }, formData, onSetFormData)
 
@@ -41,7 +41,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                         type="checkbox" 
                         id="transforms" 
                         checked={inputData.transforms}  
-                        onChange={selectTransforms} 
+                        onChange={selected => handleSelect("transforms", selected)} 
                     />
                     <label htmlFor="add">This Card Transforms</label>                    
                 </div>
@@ -53,7 +53,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                             id="transformed"
                             placeholder="Type transformed image url here"
                             value={formData.transformed}
-                            onChange={e => handleChange(e)}
+                            onChange={handleChange}
                             required={inputData.transforms}
                         />
                     </div>
@@ -64,8 +64,8 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <SelectOption 
                     id="type" 
                     name="type"
-                    onHandleChange={selectType} 
-                    selected={inputData.selectedType} 
+                    onHandleChange={selected => handleSelect("type", selected)} 
+                    selected={inputData.type} 
                     multi={false}
                     options={[
                         { value: 'creature', label: 'Creature' },
@@ -81,8 +81,8 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <SelectOption
                     id="colors" 
                     name="colors"
-                    onHandleChange={selectColors} 
-                    selected={inputData.selectedColors} 
+                    onHandleChange={selected => handleSelect("colors", selected)} 
+                    selected={inputData.colors} 
                     multi={true}
                     options={[
                         { value: 'black', label: 'Black' },

@@ -632,6 +632,15 @@
       ],
       "main": true,
       "id": 57
+    },
+    {
+      "name": "Spellskite",
+      "image": "https://cards.scryfall.io/large/front/1/a/1a84bada-ed6a-4e97-8a0c-05b7cb32d66f.jpg?1562875794",
+      "transformed": "",
+      "type": "creature",
+      "colors": [],
+      "main": true,
+      "id": 58
     }
   ]
 }
