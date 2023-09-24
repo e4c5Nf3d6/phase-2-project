@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import React, { useEffect, useState } from "react"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import Section from "./Section"
 
 const iconImages = {

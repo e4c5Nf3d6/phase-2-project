@@ -1,6 +1,6 @@
-import React from "react";
-import useHandleInputData from "../hooks/useHandleInputData";
-import SelectOption from "./SelectOption";
+import React from "react"
+import useHandleInputData from "../hooks/useHandleInputData"
+import SelectOption from "./SelectOption"
 
 function Form({ onSubmitCard, formData, onSetFormData }) {
     const { inputData, handleChange, handleSelect, resetData } = useHandleInputData({
@@ -22,6 +22,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <input 
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Type Card Name"
                     value={formData.name}
                     onChange={e => handleChange(e)}
@@ -31,6 +32,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                 <input 
                     type="text"
                     id="image"
+                    name="image"
                     placeholder="Type Image URL"
                     value={formData.image}
                     onChange={e => handleChange(e)}
@@ -40,10 +42,11 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     <input 
                         type="checkbox" 
                         id="transforms" 
+                        name="transforms"
                         checked={inputData.transforms}  
                         onChange={selected => handleSelect("transforms", selected)} 
                     />
-                    <label htmlFor="add">This Card Transforms</label>                    
+                    <label htmlFor="transforms">This Card Transforms</label>                    
                 </div>
                 {inputData.transforms ?
                     <div>
@@ -51,6 +54,7 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                         <input 
                             type="text"
                             id="transformed"
+                            name="transformed"
                             placeholder="Type transformed image url here"
                             value={formData.transformed}
                             onChange={handleChange}
@@ -96,10 +100,11 @@ function Form({ onSubmitCard, formData, onSetFormData }) {
                     <input 
                         type="checkbox" 
                         id="main" 
+                        name="main"
                         checked={formData.main} 
                         onChange={handleChange} 
                     />
-                    <label htmlFor="add">Add to Deck</label>                    
+                    <label htmlFor="main">Add to Deck</label>                    
                 </div>
                 <input type="submit" value="Submit Card" />
             </form>

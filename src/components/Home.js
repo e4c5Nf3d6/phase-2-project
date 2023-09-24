@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import useDocumentTitle from "../hooks/useDocumentTitle";
+import React, { useState } from "react"
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import Filter from "./Filter"
 import Container from "./Container"
 

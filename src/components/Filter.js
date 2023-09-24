@@ -1,6 +1,6 @@
-import React from "react";
-import useHandleInputData from "../hooks/useHandleInputData";
-import SelectOption from "./SelectOption";
+import React from "react"
+import useHandleInputData from "../hooks/useHandleInputData"
+import SelectOption from "./SelectOption"
 
 function Filter({ filterData, onSetFilterData }) {
     const { inputData, handleChange, handleSelect } = useHandleInputData({
@@ -13,7 +13,8 @@ function Filter({ filterData, onSetFilterData }) {
             <form>
                 <label htmlFor="search">Search for Cards</label>
                 <input 
-                    id="search" 
+                    id="search"
+                    name="search"
                     type="text" 
                     placeholder="Search..." 
                     value={filterData.search}

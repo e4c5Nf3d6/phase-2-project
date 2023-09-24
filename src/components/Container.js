@@ -1,5 +1,5 @@
-import React from "react";
-import CardDisplay from "./CardDisplay";
+import React from "react"
+import CardDisplay from "./CardDisplay"
 
 function Container({ cards, onAddOrRemove }) {
     const sortedCards = cards.sort((a, b) => (a.name > b.name) ? 1 : -1)

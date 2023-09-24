@@ -259,7 +259,7 @@
       "colors": [
         "blue"
       ],
-      "main": true,
+      "main": false,
       "id": 24
     },
     {
@@ -641,6 +641,17 @@
       "colors": [],
       "main": true,
       "id": 58
+    },
+    {
+      "name": "Opposition Agent",
+      "image": "https://cards.scryfall.io/large/front/0/8/086f97e9-8b62-44f3-b467-149c2ac5ca78.jpg?1608909875",
+      "transformed": "",
+      "type": "creature",
+      "colors": [
+        "black"
+      ],
+      "main": true,
+      "id": 59
     }
   ]
 }

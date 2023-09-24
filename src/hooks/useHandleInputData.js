@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 
 function useHandleInputData(initialInput, data, onSetData) {
     const [inputData, setInputData] = useState(initialInput)

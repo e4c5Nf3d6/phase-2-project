@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import useDocumentTitle from "../hooks/useDocumentTitle";
-import Form from "./Form";
-import CardDisplay from "./CardDisplay";
+import React, { useEffect, useState } from "react"
+import useDocumentTitle from "../hooks/useDocumentTitle"
+import Form from "./Form"
+import CardDisplay from "./CardDisplay"
 
 function AddCard({ cards, onSetCards }) {
     const [formData, setFormData] = useState({
@@ -23,34 +23,34 @@ function AddCard({ cards, onSetCards }) {
     useEffect(() => {
         let timeout
         if (message) {
-          timeout = setTimeout(() => {
-            setMessage({ visible: false, content: "" })
-          }, 3000)
+            timeout = setTimeout(() => {
+                setMessage({ visible: false, content: "" })
+            }, 3000)
         }
         return () => clearTimeout(timeout)
     }, [message])
 
     function submitCard() {
         fetch(`http://localhost:3000/cards`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
         })
         .then(r => r.json())
         .then(data => {
-          onSetCards([...cards, data])
-          setMessage({ 
-            visible: true, 
-            class: "success",
-            content: "Submission Successful!"
-          })
+            onSetCards([...cards, data])
+            setMessage({ 
+                visible: true, 
+                class: "success",
+                content: "Submission Successful!"
+            })
         })
         .catch(() => setMessage({ 
-          visible: true, 
-          class: "failure",
-          content: "Something Went Wrong"
+            visible: true, 
+            class: "failure",
+            content: "Something Went Wrong"
         }))
     }
 
