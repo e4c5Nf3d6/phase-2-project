@@ -43,7 +43,6 @@ function Filter({ filterData, onSetFilterData }) {
                     name="colors"
                     onHandleChange={selected => handleSelect("colors", selected)} 
                     selected={inputData.colors} 
-                    multi={true}
                     options={[
                         { value: 'black', label: 'Black' },
                         { value: 'blue', label: 'Blue' },
